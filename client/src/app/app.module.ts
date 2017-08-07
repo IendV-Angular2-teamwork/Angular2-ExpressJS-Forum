@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutesModule } from './routes.module';
 
-import Data from './data/data.service';
+import  Data  from './data/data.service';
 
 import { HttpModule }from '@angular/http';
 
