@@ -1,16 +1,26 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
+const controllers = require('../controllers')
 const session = require('express-session')
 const passport = require('passport')
 const handlebars = require('express-handlebars')
 const helpers = require('./helpers')
+const cors = require('cors')
+const localSignupStrategy = controllers.users.signupStrategy
+const localLoginStrategy = controllers.users.loginStrategy
+
 
 module.exports = (app) => {
   app.engine('handlebars', handlebars({
     helpers: helpers,
     defaultLayout: 'main'
   }))
+
+  app.use(cors())
+  passport.use('local-signup', localSignupStrategy)
+  passport.use('local-login', localLoginStrategy)
+
   app.set('view engine', 'handlebars')
   app.use(cookieParser())
   app.use(bodyParser.urlencoded({ extended: true }))

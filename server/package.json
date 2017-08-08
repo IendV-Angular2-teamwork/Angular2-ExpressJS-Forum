@@ -16,11 +16,16 @@
   "dependencies": {
     "body-parser": "1.17.2",
     "cookie-parser": "1.4.3",
+    "cors": "2.8.3",
     "express": "4.15.3",
     "express-handlebars": "3.0.0",
+    "morgan": "^1.6.1",
     "express-session": "1.15.3",
     "mongoose": "4.10.4",
+    "swig": "^1.4.2",
+    "jsonwebtoken": "7.4.1",
     "passport": "0.3.2",
-    "passport-local": "1.0.0"
+    "passport-local": "1.0.0",
+    "validator": "7.2.0"
   }
 }

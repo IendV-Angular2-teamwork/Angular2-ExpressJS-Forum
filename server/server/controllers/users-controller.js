@@ -1,9 +1,14 @@
 const encryption = require('../utilities/encryption')
+const passport = require('passport')
+const localSignupStrategy = require('../passport/local-signup')
+const localLoginStrategy = require('../passport/local-login')
 const User = require('mongoose').model('User')
 const Thread = require('../data/Thread')
 const Answer = require('../data/Answer')
 
 module.exports = {
+  signupStrategy: localSignupStrategy,
+  loginStrategy: localLoginStrategy,
   registerGet: (req, res) => {
     res.render('users/register')
   },
@@ -31,34 +36,51 @@ module.exports = {
       })
     })
   },
-  loginGet: (req, res) => {
-    res.render('users/login')
-  },
-  loginPost: (req, res) => {
-    let reqUser = req.body
-    User
-      .findOne({ username: reqUser.username }).then(user => {
-        if (!user) {
-          res.locals.globalError = 'Invalid user data'
-          res.render('users/login')
-          return
+  loginGet: (req, res, next) => {
+    return passport.authenticate('local-login', (err, token, userData) => {
+      if (err) {
+        if (err.firstName === 'IncorrectCredentialsError') {
+          return res.status(200).json({
+            success: false,
+            message: err.message
+          })
         }
 
-        if (!user.authenticate(reqUser.password)) {
-          res.locals.globalError = 'Invalid user data'
-          res.render('users/login')
-          return
-        }
-
-        req.logIn(user, (err, user) => {
-          if (err) {
-            res.locals.globalError = err
-            res.render('users/login')
-          }
-
-          res.redirect('/')
+        return res.status(200).json({
+          success: false,
+          message: 'Could not process the form.'
         })
+      }
+      return res.json({
+        success: true,
+        message: 'You have successfully logged in!',
+        token,
+        user: userData
       })
+    })(req, res, next)
+  },
+  loginPost: (req, res, next) => {
+    return passport.authenticate('local-login', (err, token, userData) => {
+      if (err) {
+        if (err.firstName === 'IncorrectCredentialsError') {
+          return res.status(200).json({
+            success: false,
+            message: err.message
+          })
+        }
+
+        return res.status(200).json({
+          success: false,
+          message: 'Could not process the form.'
+        })
+      }
+      return res.json({
+        success: true,
+        message: 'You have successfully logged in!',
+        token,
+        user: userData
+      })
+    })(req, res, next)
   },
   logout: (req, res) => {
     req.logout()
