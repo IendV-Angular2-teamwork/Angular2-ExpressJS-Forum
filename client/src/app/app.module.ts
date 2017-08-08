@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutesModule } from './routes.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+ 
 import  Data  from './data/data.service';
 
 import { HttpModule }from '@angular/http';
@@ -18,7 +19,9 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutesModule
+    AppRoutesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [Data],
   bootstrap: [AppComponent]

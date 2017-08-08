@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/users/login/login.component';
@@ -20,7 +21,12 @@ const routes: Routes = [
     RegisterComponent,
     CreateThreadComponent
   ],
-  imports:[RouterModule.forRoot(routes), CommonModule],
+  imports:[
+    RouterModule.forRoot(routes),
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutesModule {}

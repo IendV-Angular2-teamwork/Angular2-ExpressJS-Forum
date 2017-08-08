@@ -1,1 +1,69 @@
+
 <h1>REGISTER PAGE</h1>
+
+<form #registerUserForm='ngForm' (ngSubmit)='onSubmit()'>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input 
+      type="text" 
+      id="username" 
+      name="username" 
+      [(ngModel)]='user.username' 
+      #username='ngModel' 
+      required/>
+    <div [hidden]='username.valid || username.pristine'>
+      Username is required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">First name:</label>
+    <input
+      type="text" 
+      id="firstName" 
+      name="firstName" 
+      [(ngModel)]='user.firstName' 
+      #firstName='ngModel' 
+      required/>
+    <div [hidden]='firstName.valid || firstName.pristine'>
+      First name is required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last name:</label>
+    <input 
+      type="text" 
+      id="lastName" 
+      name="lastName" 
+      [(ngModel)]='user.lastName' 
+      #lastName='ngModel' 
+      required/>
+    <div [hidden]='lastName.valid || lastName.pristine'>
+      Last name is required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      [(ngModel)]='user.password'  
+      #password='ngModel'
+      minlength="6"
+      maxlength="20" 
+      required/>
+    <div [hidden]='password.valid || password.pristine'>
+      Password is required!
+    </div>
+  </div>
+  
+  <!-- TODO: confirm password -->
+
+  <button
+    type="submit" 
+    [disabled]='!registerUserForm.form.valid' 
+    class="btn btn-success">Register</button>
+</form>
