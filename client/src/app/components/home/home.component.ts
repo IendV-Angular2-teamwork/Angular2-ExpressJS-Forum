@@ -8,7 +8,7 @@ import Data from '../../data/data.service';
   styleUrls: ['./home.component.css'] 
 })
 export class HomeComponent implements OnInit {
-  data: any;
+  data: any;  
 
   constructor(private dataBase: Data){}
   

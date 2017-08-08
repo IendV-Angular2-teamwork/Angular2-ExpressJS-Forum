@@ -14,7 +14,7 @@ export class RegisterComponent {
   isPasswordConfirmed: Boolean;
   
   constructor(private data: Data){
-    this.user = new User('', '', '', '', '');
+    this.user = new User('', '', '', '');
   }
 
   onSubmit(registerUserForm){
