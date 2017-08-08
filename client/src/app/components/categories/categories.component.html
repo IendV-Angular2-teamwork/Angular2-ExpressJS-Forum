@@ -1,0 +1,6 @@
+<h2>Categories:</h2>
+<ul>
+  <li *ngFor="let category of data.categories">
+    <button class="btn" (click)='listThreads(category)'>{{category.name}}</button>
+  </li>
+</ul>

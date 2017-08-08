@@ -1,7 +1,7 @@
 
 <h1>REGISTER PAGE</h1>
 
-<form #registerUserForm='ngForm' (ngSubmit)='onSubmit()'>
+<form #registerUserForm='ngForm' novalidate (ngSubmit)='onSubmit(registerUserForm.value, registerUserForm.valid)'>
   <div class="form-group">
     <label for="username">Username:</label>
     <input 
@@ -53,15 +53,15 @@
       [(ngModel)]='user.password'  
       #password='ngModel'
       minlength="6"
-      maxlength="20" 
+      maxlength="20"      
       required/>
     <div [hidden]='password.valid || password.pristine'>
       Password is required!
     </div>
   </div>
   
-  <!-- TODO: confirm password -->
-
+  <!-- Confirm Password --> 
+  
   <button
     type="submit" 
     [disabled]='!registerUserForm.form.valid' 

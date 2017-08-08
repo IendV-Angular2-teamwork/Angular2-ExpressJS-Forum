@@ -22,7 +22,29 @@ export default class Data{
       });
   }
     
-  registerUser(user){
+  getCategoriesData(): Promise<Array<{}>>{
+    return this.http
+      .get(`${baseUrl}/categories`)
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
+  }
+
+  getTheadsByCategory(categoryId): Promise<Array<{}>>{
+    return this.http
+      .get(`${baseUrl}/list/${categoryId}`)
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
+  }
+
+  registerUser(user){ //TODO
     let body = {
       username: user.username,
       firstName: user.firstName,

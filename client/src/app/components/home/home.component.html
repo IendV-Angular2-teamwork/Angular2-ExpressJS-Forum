@@ -1,7 +1,17 @@
-<ul>
-  <li *ngFor="let article of data.threads">
-    <h3>{{article.title}}</h3>
-    <h4>{{article._id}}</h4>
-    <p>{{article.description}}</p>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-3">
+    <categories (categoryId)="threadsToList($event)"></categories>
+  </div>  
+  <div class="col-md-6">
+    <h2>Threads:</h2>
+    <ul>
+      <li *ngFor="let article of data.threads">
+        <h3>{{article.title}}</h3>
+        <h4>{{article.date | date: 'dd/MM/yyyy'}}</h4>
+        <p>{{article.description}}</p>
+        <p>Likes:{{article.likes}} | Views: {{article.views}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-3"></div>
+</div>

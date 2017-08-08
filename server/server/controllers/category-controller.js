@@ -35,21 +35,24 @@ module.exports = {
   },
 
   all: (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     Category.find().then(categories => {
-      res.render('category/all', {
+      res.json({
+        success: true,
         categories: categories
-      })
+      }) 
     })
   },
 
   getThreads: (req, res) => {
     let id = req.params.id
-
+    res.header("Access-Control-Allow-Origin", "*");
     Thread.find({category: id}).then(threads => {
       Category.findById(id).then(category => {
-        res.render('category/threads-per-category', {
-          threads: threads,
-          category: category
+        res.json({
+          success: true,
+          category: category,
+          threads: threads
         })
       })
     })
