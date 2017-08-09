@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   constructor(private dataBase: Data){} 
   
   ngOnInit(){
-    this.data = this.dataBase.getHomeData().then(data => this.data = data);   
+    this.data = this.dataBase.getHomeData().then(data => this.data = data); 
+    console.log(this.data)  
   }
 
   threadsToList(categoryId){

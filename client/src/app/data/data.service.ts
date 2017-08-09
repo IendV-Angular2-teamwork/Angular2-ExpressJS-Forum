@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise'; 
 import 'rxjs/add/operator/map'; 
 import { User } from '../models/user.model';
+import { UserService } from './user.service';
 
 const baseUrl = 'http://localhost:5000';
 
@@ -10,8 +11,9 @@ const baseUrl = 'http://localhost:5000';
 export default class Data{
   data; 
 
-  constructor (private http: Http) {}
-  
+  constructor (private http: Http, private userService: UserService) {
+  }
+
   getHomeData(): Promise<Array<{}>> {
     return this.http
       .get(baseUrl)
@@ -59,15 +61,24 @@ export default class Data{
   }  
 
   loginUser(user){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
     let body = {
       email: user.email,
       password: user.password
     }
 
-    this.http
-      .post(`${baseUrl}/auth/login`, body)
+    return this.http
+      .post(`${baseUrl}/auth/login`, body, { headers })
       .map(res => res.json())
-      .subscribe(res => console.log(res));
+      .map((res) => {
+        if (res.success) {
+          this.userService.setToken(res.token);
+        }
+
+        return res;
+      });
     
     
   }

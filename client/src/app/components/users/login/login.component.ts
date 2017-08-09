@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
 import { User } from '../../../models/user.model';
+import {UserService} from '../../../data/user.service';
 import Data from '../../../data/data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'login',
@@ -11,13 +14,17 @@ import Data from '../../../data/data.service';
 export class LoginComponent {
   user: User
   
-  constructor(private data: Data){
+  constructor(private data: Data, private router: Router, private userService: UserService){
     this.user = new User('', '', '', '');
   }
 
   onSubmit(loginFormUser){
-    loginFormUser = this.user;    
-    this.data.loginUser(this.user);
-    console.log(this.user);
+    loginFormUser = this.user;   
+    
+    this.data.loginUser(this.user).subscribe((result) => {
+     // this.userService.setToken(result.token);
+      this.router.navigateByUrl('/register');
+    });
   }
+  
 }
