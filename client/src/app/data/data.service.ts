@@ -1,9 +1,10 @@
 import { Injectable }from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise'; 
+import 'rxjs/add/operator/map'; 
 import { User } from '../models/user.model';
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:5000';
 
 @Injectable()
 export default class Data{
@@ -44,17 +45,30 @@ export default class Data{
       });
   }
 
-  registerUser(user){ //TODO
+  registerUser(user){ 
+    let body = {      
+      name: user.name,
+      email: user.email,
+      password: user.password
+    };    
+
+    this.http
+      .post(`${baseUrl}/auth/signup`, body)
+      .map(res => res.json())
+      .subscribe(res => console.log(res));    
+  }  
+
+  loginUser(user){
     let body = {
-      username: user.username,
-      firstName: user.firstName,
-      lastName: user.lastName,
+      email: user.email,
       password: user.password
     }
-    this.http.post(`${baseUrl}/users/register`, body);
 
-    console.log('regna se');
+    this.http
+      .post(`${baseUrl}/auth/login`, body)
+      .map(res => res.json())
+      .subscribe(res => console.log(res));
+    
+    
   }
-
-  
 }

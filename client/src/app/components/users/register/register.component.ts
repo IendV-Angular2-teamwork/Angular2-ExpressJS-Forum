@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../../../models/user.model';
 import Data from '../../../data/data.service';
@@ -11,15 +12,16 @@ import Data from '../../../data/data.service';
 })
 export class RegisterComponent {
   user: User;
-  isPasswordConfirmed: Boolean;
   
-  constructor(private data: Data){
+  constructor(private data: Data, private router: Router){
     this.user = new User('', '', '', '');
   }
 
   onSubmit(registerUserForm){
     registerUserForm = this.user;
-    //this.data.registerUser(this.user); TODO: към сървъра трябва да се подаде сол и хеширана парола, трябва да се преработи сървъра според мен или да се хешира в клиента.
+    this.data.registerUser(this.user); 
     console.log(this.user);
+
+    this.router.navigateByUrl('/login');
   }
 }

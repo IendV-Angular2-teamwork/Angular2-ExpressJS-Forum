@@ -17,6 +17,7 @@ export class LoginComponent {
 
   onSubmit(loginFormUser){
     loginFormUser = this.user;    
+    this.data.loginUser(this.user);
     console.log(this.user);
   }
 }

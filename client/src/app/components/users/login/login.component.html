@@ -2,16 +2,16 @@
 
 <form #loginFormUser='ngForm' (ngSubmit)='onSubmit()'>
   <div class="form-group">
-    <label for="username">Username:</label>
+    <label for="email">Email:</label>
     <input 
-      type="text" 
-      id="username" 
-      name="username" 
-      [(ngModel)]='user.username' 
-      #username='ngModel' 
+      type="email" 
+      id="email" 
+      name="email" 
+      [(ngModel)]='user.email' 
+      #email='ngModel' 
       required/>
-    <div [hidden]='username.valid || username.pristine'>
-      Username is required!
+    <div [hidden]='email.valid || email.pristine'>
+      Email is required!
     </div>
   </div>  
 
