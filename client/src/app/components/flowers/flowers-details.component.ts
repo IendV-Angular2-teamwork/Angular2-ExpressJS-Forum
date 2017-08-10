@@ -11,7 +11,7 @@ import Data from '../../data/data.service';
 })
 export class FlowerDetailsComponent implements OnInit {
   flowerId: number;
-  data: any;
+  data = {name:'', id:'', category:'', image:''};
   reviewsData: any;
 
   constructor(
@@ -48,6 +48,7 @@ export class FlowerDetailsComponent implements OnInit {
   }
 
   delete(flowerId){
-    this.dataBase.deleteFlower(flowerId);
+    this.dataBase.deleteFlower(flowerId)
+    .subscribe(res => {this.router.navigateByUrl('/');});
   }
 }

@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'; 
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
+import { EventService } from './event.service'
 
 const baseUrl = 'http://localhost:5000';
 
@@ -11,7 +12,7 @@ const baseUrl = 'http://localhost:5000';
 export default class Data{
   data; 
 
-  constructor (private http: Http, private userService: UserService) {}
+  constructor (private http: Http, private userService: UserService, private eventService: EventService) {}
 
   getHomeData(): Promise<Array<{}>>  {
     return this.http
@@ -64,7 +65,7 @@ export default class Data{
     this.http
       .post(`${baseUrl}/auth/signup`, body)
       .map(res => res.json())
-      .subscribe(res => console.log(res));    
+      .subscribe(res => this.eventService.triggerStatisticChanged(''));    
   }  
 
   loginUser(user){
@@ -81,6 +82,7 @@ export default class Data{
       .map(res => res.json())
       .map((res) => {
         if (res.success) {
+          this.userService.setUser(res.user);
           this.userService.setToken(res.token);
         }
 
@@ -120,10 +122,9 @@ export default class Data{
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `bearer ${token}`);
 
-    this.http
+    return this.http
       .post(`${baseUrl}/flowers/create`, body, { headers })
-      .map(res => res.json())
-      .subscribe(res => console.log(res));    
+      .map(res => { this.eventService.triggerStatisticChanged(''); return res.json();})
   }
 
   addReviewOfFlower(flowerReview, flowerId){
@@ -161,20 +162,20 @@ export default class Data{
       });
   }
 
-  deleteFlower(flowerId){ //TODO: Unautorize!??
+  deleteFlower(flowerId){
     let token = this.userService.getToken();
     
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `bearer ${token}`);
 
-     this.http
-      .post(`${baseUrl}/flowers/delete/${flowerId}/`, { headers })
-      .map(res => res.json())
-      .subscribe(res => console.log(res));
+     return this.http
+      .post(`${baseUrl}/flowers/delete/${flowerId}/`, {}, { headers })
+      .map(res => { this.eventService.triggerStatisticChanged(''); return res.json(); })
+      
   }  
   
-  postLike(flowerId){ //TODO: Unautorize!??
+  postLike(flowerId){
     let token = this.userService.getToken();
 
     let headers = new Headers();
@@ -182,7 +183,7 @@ export default class Data{
     headers.append('Authorization', `bearer ${token}`);
 
     this.http
-      .post(`${baseUrl}/flowers/details/${flowerId}/like`, { headers })
+      .post(`${baseUrl}/flowers/details/${flowerId}/like`, {}, { headers })
       .map(res => res.json())
       .subscribe(res => console.log(res));
     }  

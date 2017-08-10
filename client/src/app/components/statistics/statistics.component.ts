@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import Data from '../../data/data.service';
+import { EventService } from '../../data/event.service'
 
 @Component({
   selector: 'statistics',
@@ -8,15 +9,23 @@ import Data from '../../data/data.service';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit{ 
-  data;
+  data = {flowers: '', users:''};
 
-  constructor(private dataBase: Data){}
+  constructor(private dataBase: Data, private eventService: EventService){}
 
-  ngOnInit(){
+  loadStatistic() {
     this.dataBase
       .getStatistics()
-      .then(data => this.data = data);
+      .then(data => {this.data = data;});
+  }
 
-    //console.log(this.data);  
+  ngOnInit(){
+    this.loadStatistic();
+
+    this.eventService.statisticChanged.subscribe(
+      (param) => {
+        this.loadStatistic();
+      }
+    );
   }
 }

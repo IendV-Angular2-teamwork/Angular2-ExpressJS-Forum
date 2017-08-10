@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private dataBase: Data, private router: Router){} 
   
   ngOnInit(){
-    this.data = this.dataBase.getHomeData().then(data => this.data = data); 
+    this.dataBase.getHomeData().then(data => this.data = data); 
     console.log(this.data)  
   }  
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../data/user.service';
+import { EventService} from '../../data/event.service';
 
 @Component({
   selector: 'nav-bar',
@@ -12,13 +13,14 @@ export class NavbarComponent implements OnInit {
   loggedIn = false; 
   username = "";
 
-  constructor(private userService: UserService, private router: Router){  
+  constructor(private userService: UserService, private router: Router, 
+                private eventService: EventService){  
     this.loggedIn = userService.isLoggedIn()
     console.log(this.loggedIn)
   }
 
   ngOnInit() {
-    this.userService.userLoggedIn.subscribe(
+    this.eventService.userLoggedIn.subscribe(
       (name) => {
         this.loggedIn = this.userService.isLoggedIn();
         this.username=name;
@@ -26,6 +28,10 @@ export class NavbarComponent implements OnInit {
     );
   }
 
+  logout(){
+    console.log('logout');
+    this.userService.logout();
+  }
   getUser(){
     this.router.navigateByUrl(`flowers/mine`);
   }

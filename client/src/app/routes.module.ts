@@ -13,6 +13,7 @@ import { FlowerReviewComponent } from './components/flowers/flower-review.compon
 
 
 import { UserService } from './data/user.service';
+import { EventService } from './data/event.service';
 import { LoggedInGuard } from './directives/logged.in.guard';
 
 const routes: Routes = [
@@ -41,6 +42,6 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   exports: [RouterModule],
-  providers: [UserService, LoggedInGuard]
+  providers: [UserService, LoggedInGuard, EventService]
 })
 export class AppRoutesModule {}
