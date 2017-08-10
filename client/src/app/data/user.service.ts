@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class UserService {
-    userLoggedIn = new EventEmitter();
+  userLoggedIn = new EventEmitter();
   token;
 
   constructor() {
@@ -14,6 +14,8 @@ export class UserService {
     this.token = token;
     this.userLoggedIn.emit('pesho');
   }
+
+  //TODO: setName???
   
   getToken() {
     return this.token;

@@ -1,0 +1,77 @@
+<h1>New Flower</h1>
+
+<form #newFlowerForm='ngForm' (ngSubmit)='onSubmit()'>
+  <div class="form-group">
+    <label for="name">Flower name:</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      [(ngModel)]='flower.name' 
+      #name='ngModel' 
+      required/>
+    <div [hidden]='name.valid || name.pristine'>
+      Name is required!
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="category">Category:</label>
+    <input 
+      type="text" 
+      id="category"
+      name="category" 
+      [(ngModel)]='flower.category'
+      #category='ngModel'
+      required/>
+    <div [hidden]='category.valid || category.pristine'>
+      Password is required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="blossom">Blossom:</label>
+    <input 
+      type="text" 
+      id="blossom"
+      name="blossom" 
+      [(ngModel)]='flower.blossom'
+      #blossom='ngModel'
+      required/>
+    <div [hidden]='blossom.valid || blossom.pristine'>
+      Blossom is required!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input 
+      type="number" 
+      id="price"
+      name="price" 
+      [(ngModel)]='flower.price'
+      #price='ngModel'
+      required/>
+    <div [hidden]='price.valid || price.pristine'>
+      Price is required!
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="image">Image:</label>
+    <input 
+      type="url" 
+      id="image"
+      name="image" 
+      [(ngModel)]='flower.image'
+      #image='ngModel'
+      required/>
+    <div [hidden]='image.valid || image.pristine'>
+      Image is required!
+    </div>  
+  </div>
+
+  <!-- TODO:live preview to image -->
+
+  <button type="submit" [disabled]="!newFlowerForm.form.valid" class="btn btn-success">Add flower</button>
+</form>

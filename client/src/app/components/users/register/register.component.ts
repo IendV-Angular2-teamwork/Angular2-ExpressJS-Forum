@@ -15,11 +15,11 @@ export class RegisterComponent {
   user: User;
   
   constructor(private data: Data, private router: Router, private userService: UserService){
-    this.user = new User('', '', '', '');
+    this.user = new User();
     console.log(this.userService.isLoggedIn())
   }
 
-  onSubmit(registerUserForm){
+  onSubmit(registerUserForm){ 
     registerUserForm = this.user;
     this.data.registerUser(this.user); 
     console.log(this.user);

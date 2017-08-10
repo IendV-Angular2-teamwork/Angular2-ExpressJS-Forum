@@ -5,17 +5,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }from '@angular/http';
 
 import  Data  from './data/data.service'; 
-import  {UserService}  from './data/user.service'; 
+import  { UserService }  from './data/user.service'; 
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     HomeComponent,
-    CategoriesComponent    
+    StatisticsComponent   
   ],
   imports: [
     BrowserModule,

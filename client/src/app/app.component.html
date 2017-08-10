@@ -1,14 +1,13 @@
 <div style="text-align:center">
-  <div *ngIf="username">Welcome {{username}}</div>
-  <nav>
-    <a routerLink='/'>Home</a>
-    <a *ngIf="loggedIn" routerLink='/new-thread'>New thread</a>
-    <a *ngIf="!loggedIn"routerLink='/login'>Login</a>
-    <a *ngIf="!loggedIn"routerLink='/register'>Register</a>
-  </nav>
-  <div>
-    <router-outlet></router-outlet>  
-  </div>  
+  <nav-bar></nav-bar>
+  <div class="row">
+    <div class="col-md-3">
+      <statistics></statistics>
+    </div>
+    <div class="colo-md-9">
+      <router-outlet></router-outlet>  
+    </div>
+  </div>    
 </div>
  
   

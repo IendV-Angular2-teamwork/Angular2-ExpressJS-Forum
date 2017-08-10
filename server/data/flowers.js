@@ -15,7 +15,7 @@ module.exports = {
       price: flower.price,
       image: flower.image,
       createdOn: new Date(),
-      createdBy: blossom.createdBy,
+      createdBy: flower.createdBy,
       likes: [],
       reviews: []
     }    

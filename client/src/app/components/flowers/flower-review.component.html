@@ -1,0 +1,38 @@
+<h1>Write flower review:</h1>
+
+<form #flowerReviewForm='ngForm' (ngSubmit)='onSubmit()'>
+  <div class="form-group">
+    <label for="rating">Rating:</label>
+    <select 
+      id="rating" 
+      name="rating" 
+      [(ngModel)]='flowerReview.rating' 
+      #rating='ngModel' 
+      required> 
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <div [hidden]='rating.valid || rating.pristine'>
+      Rating is required!
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <input 
+      type="textarea" 
+      id="comment"
+      name="comment" 
+      [(ngModel)]='flowerReview.comment'
+      #comment='ngModel'
+      required />
+    <div [hidden]='comment.valid || comment.pristine'>
+      Comment is required!
+    </div>
+  </div>
+  
+  <button type="submit" [disabled]="!flowerReviewForm.form.valid" class="btn btn-success">Login</button>
+</form>

@@ -11,12 +11,40 @@ const baseUrl = 'http://localhost:5000';
 export default class Data{
   data; 
 
-  constructor (private http: Http, private userService: UserService) {
+  constructor (private http: Http, private userService: UserService) {}
+
+  getHomeData(): Promise<Array<{}>>  {
+    return this.http
+      .get(`${baseUrl}/flowers/all`)
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
   }
 
-  getHomeData(): Promise<Array<{}>> {
+  getStatistics(){
     return this.http
-      .get(baseUrl)
+      .get(`${baseUrl}/stats`)
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
+  }  
+
+  findFlowerById(flowerId){
+
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+    return this.http
+      .get(`${baseUrl}/flowers/details/${flowerId}`, { headers })
       .toPromise()
       .then(resp => resp.json())
       .catch(err => { 
@@ -25,28 +53,7 @@ export default class Data{
       });
   }
     
-  getCategoriesData(): Promise<Array<{}>>{
-    return this.http
-      .get(`${baseUrl}/categories`)
-      .toPromise()
-      .then(resp => resp.json())
-      .catch(err => { 
-         console.log(err);
-         return [];
-      });
-  }
-
-  getTheadsByCategory(categoryId): Promise<Array<{}>>{
-    return this.http
-      .get(`${baseUrl}/list/${categoryId}`)
-      .toPromise()
-      .then(resp => resp.json())
-      .catch(err => { 
-         console.log(err);
-         return [];
-      });
-  }
-
+  
   registerUser(user){ 
     let body = {      
       name: user.name,
@@ -78,8 +85,44 @@ export default class Data{
         }
 
         return res;
-      });
-    
-    
+      });    
   }
-}
+
+  getProfileInfo(): Promise<Array<{}>> { 
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+   return this.http
+      .get(`${baseUrl}/flowers/mine`, { headers })
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
+  }
+
+  addFlower(flower){
+    let body = {
+      name: flower.name,
+      category: flower.category,
+      blossom: flower.blossom,
+      price: flower.price,
+      image: flower.image
+    }
+
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+    this.http
+      .post(`${baseUrl}/flowers/create`, body, { headers })
+      .map(res => res.json())
+      .subscribe(res => console.log(res));    
+  }
+} 

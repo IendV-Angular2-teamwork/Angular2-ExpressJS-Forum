@@ -22,10 +22,10 @@ function validateFlowerForm (payload) {
     errors.category = 'Category must be more than 6 symbols.'
   }
 
-  if (!payload || typeof payload.blossom !== 'string' || payload.blossom.length < 6) {
-    isFormValid = false
-    errors.category = 'Blossom must be more than 6 symbols.'
-  }
+  //if (!payload || typeof payload.blossom !== 'string' || payload.blossom.length < 6) {
+  //  isFormValid = false
+  //  errors.category = 'Blossom must be more than 6 symbols.'
+  //}
 
   if (!payload || !payload.price || payload.price < 0) {
     isFormValid = false
@@ -155,7 +155,7 @@ router.post('/details/:id/like', authCheck, (req, res) => {
   if (!flower) {
     return res.status(200).json({
       success: false,
-      message: 'flower does not exists!'
+      message: 'Flower does not exists!'
     })
   }
 
