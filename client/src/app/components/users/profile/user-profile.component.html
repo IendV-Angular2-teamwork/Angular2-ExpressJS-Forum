@@ -1,1 +1,8 @@
-<h1>data is undefined, look at console</h1>
+<h1>My flowers:</h1>
+<ul>
+  <li *ngFor="let flower of data">
+    <p>name: {{flower.name}}</p>
+    <img src="{{flower.image}}" alt="{{flower.name}}" />    
+    <p>------------------------------------------------------------</p>
+  </li>
+</ul>

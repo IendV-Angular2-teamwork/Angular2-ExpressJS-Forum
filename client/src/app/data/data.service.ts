@@ -125,4 +125,65 @@ export default class Data{
       .map(res => res.json())
       .subscribe(res => console.log(res));    
   }
+
+  addReviewOfFlower(flowerReview, flowerId){
+    let body = {
+      rating: flowerReview.rating,
+      comment: flowerReview.comment
+    }
+
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+    this.http
+      .post(`${baseUrl}/flowers/details/${flowerId}/reviews/create`, body, { headers })
+      .map(res => res.json())
+      .subscribe(res => console.log(res));
+  }
+
+  getReviewsForFlower(flowerId){
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+   return this.http
+      .get(`${baseUrl}/flowers/details/${flowerId}/reviews`, { headers })
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+         console.log(err);
+         return [];
+      });
+  }
+
+  deleteFlower(flowerId){ //TODO: Unautorize!??
+    let token = this.userService.getToken();
+    
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+     this.http
+      .post(`${baseUrl}/flowers/delete/${flowerId}/`, { headers })
+      .map(res => res.json())
+      .subscribe(res => console.log(res));
+  }  
+  
+  postLike(flowerId){ //TODO: Unautorize!??
+    let token = this.userService.getToken();
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', `bearer ${token}`);
+
+    this.http
+      .post(`${baseUrl}/flowers/details/${flowerId}/like`, { headers })
+      .map(res => res.json())
+      .subscribe(res => console.log(res));
+    }  
 } 

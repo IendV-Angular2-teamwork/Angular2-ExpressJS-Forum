@@ -5,5 +5,23 @@
 
 <img src={{data.image}} />
 <div>
-  <button (click)="getFlowerId(data.id)">Create Review</button>
+  <button class="btn" (click)="getFlowerId(data.id)">Create Review</button>
+</div>
+<div>
+  <button class="btn" (click)="like(data.id)">Like this</button>
+</div>
+<div>
+  <button class="btn btn-danger" (click)="delete(data.id)">Delete this</button>
+</div>
+
+<div>
+  <h3>Reviews:</h3>
+  <ul>
+    <li *ngFor="let review of reviewsData">
+      <p>rating: {{review.rating}}</p>
+      <p>comment: {{review.comment}}</p>
+      <p>from: {{review.user}}</p>
+      <p>----------------------------------------------------------</p>
+    </li>
+  </ul>
 </div>

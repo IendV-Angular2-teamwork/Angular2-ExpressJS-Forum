@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 import { FlowerReview } from '../../models/flower-review.model';
 
@@ -9,19 +11,31 @@ import Data from '../../data/data.service';
   templateUrl: './flower-review.component.html',
   styleUrls: ['./flower-review.component.css']
 })
-export class FlowerReviewComponent {
+export class FlowerReviewComponent implements OnInit {
   flowerReview: FlowerReview;
+  flowerId: number;
 
-  constructor() {
-    this.flowerReview = new FlowerReview();
+  constructor( 
+    private dataBase: Data,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {
+      this.flowerReview = new FlowerReview();
     
   }
 
+  ngOnInit(){
+     this.activatedRoute.params.subscribe((params: Params) => {
+        this.flowerId = params['id'];
+        console.log(this.flowerId);
+      });
+  }
+
   onSubmit(flowerReviewForm){
-    flowerReviewForm = this.flowerReview;
+    flowerReviewForm = this.flowerReview;   
 
-    console.log(this.flowerReview);
-
-    //TODO: да се върже с датата.
+    this.dataBase
+      .addReviewOfFlower(this.flowerReview, this.flowerId);
+      
+    this.router.navigateByUrl(`flowers/details/${this.flowerId}`); 
   }
 }

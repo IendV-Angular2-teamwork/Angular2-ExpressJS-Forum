@@ -12,6 +12,7 @@ import Data from '../../data/data.service';
 export class FlowerDetailsComponent implements OnInit {
   flowerId: number;
   data: any;
+  reviewsData: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -28,10 +29,25 @@ export class FlowerDetailsComponent implements OnInit {
 
     this.dataBase
       .findFlowerById(this.flowerId)
-      .then(data => this.data = data);        
+      .then(data => this.data = data);
+      
+    this.dataBase
+      .getReviewsForFlower(this.flowerId)
+      .then(data => this.reviewsData = data);  
+
+    console.log(this.data);  
+    console.log(`reviews ${this.reviewsData}`)
   }
 
   getFlowerId(flowerId){
     this.router.navigateByUrl(`flowers/details/${flowerId}/reviews/create`);
+  }
+
+  like(flowerId){
+    this.dataBase.postLike(flowerId);
+  }
+
+  delete(flowerId){
+    this.dataBase.deleteFlower(flowerId);
   }
 }
