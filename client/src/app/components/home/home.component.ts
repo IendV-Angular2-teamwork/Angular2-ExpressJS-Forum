@@ -15,11 +15,17 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(){
     this.dataBase.getHomeData().then(data => this.data = data); 
-    console.log(this.data)  
+    //console.log(this.data)  
   }  
 
   getFlowerId(flower){
     let flowerId = flower.id;   
     this.router.navigateByUrl(`flowers/details/${flowerId}`);
+  }
+
+  flowerInfoReceived(flowersInfo){    
+    this.data = flowersInfo;
+    console.log('prihwanato w home component');
+    console.log(flowersInfo);
   }
 }

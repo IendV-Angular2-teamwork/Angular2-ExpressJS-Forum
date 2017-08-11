@@ -15,6 +15,6 @@ export class EventService {
   }
 
   triggerStatisticChanged(data) {
-    this.statisticChanged.emit(data);
+    this.statisticChanged.emit(data); 
   }
 }

@@ -26,10 +26,9 @@
       required
       minlength="6"
       maxlength="20"/>
-    <div [hidden]='password.valid || password.pristine'>
+    <div [hidden]='password.valid || password.pristine'> 
       Password is required!
     </div>
-  </div>
-  
+  </div>  
   <button type="submit" [disabled]="!loginFormUser.form.valid" class="btn btn-success">Login</button>
 </form>

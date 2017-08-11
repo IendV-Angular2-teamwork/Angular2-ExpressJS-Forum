@@ -5,12 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }from '@angular/http';
 
 import  Data  from './data/data.service'; 
-import  { UserService }  from './data/user.service'; 
+import { UserService }  from './data/user.service'; 
+import { NotificationService } from './data/notification.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { SearchComponent } from './components/home/search/search.component';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    StatisticsComponent   
+    StatisticsComponent,
+    SearchComponent   
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [Data, UserService],
+  providers: [Data, UserService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

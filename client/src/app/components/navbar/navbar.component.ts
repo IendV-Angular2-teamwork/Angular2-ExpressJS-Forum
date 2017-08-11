@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../data/user.service';
 import { EventService} from '../../data/event.service';
+import { NotificationService} from '../../data/notification.service';
+
 
 @Component({
   selector: 'nav-bar',
@@ -12,11 +14,16 @@ import { EventService} from '../../data/event.service';
 export class NavbarComponent implements OnInit {
   loggedIn = false; 
   username = "";
+  notification: string;
 
-  constructor(private userService: UserService, private router: Router, 
-                private eventService: EventService){  
-    this.loggedIn = userService.isLoggedIn()
-    console.log(this.loggedIn)
+  constructor(
+    private userService: UserService,
+    private router: Router, 
+    private eventService: EventService,
+    private notificationService: NotificationService   
+  ){  
+    this.loggedIn = userService.isLoggedIn();
+    console.log(this.loggedIn);    
   }
 
   ngOnInit() {
@@ -25,7 +32,11 @@ export class NavbarComponent implements OnInit {
         this.loggedIn = this.userService.isLoggedIn();
         this.username=name;
       }
-    );
+    );    
+  }
+
+  ngOnChanges(){
+     this.notification = this.notificationService.getNotification();
   }
 
   logout(){

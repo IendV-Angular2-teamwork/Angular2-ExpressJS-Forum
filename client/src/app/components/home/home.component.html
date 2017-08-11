@@ -3,6 +3,7 @@
     <statistics></statistics>      
   </div>  
   <div class="col-md-6 flower-container">
+    <search (sendFlowerInfoToHome)="flowerInfoReceived($event)"></search>
     <h2>Flowers:</h2>  
     <ul>
       <li *ngFor="let flower of data">
@@ -12,6 +13,7 @@
         <p><span>ID:</span> {{flower.id}}</p>
         <p><span>Created by:</span> {{flower.createdBy}}</p>
         <img src="{{flower.image}}" alt="{{flower.name}}" />  
+        <p>likes: {{flower.likes.length}}</p>
         <p>-----------------------------------------------------------------------------------------------------------------</p>     
       </li>
     </ul>

@@ -4,7 +4,8 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map'; 
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
-import { EventService } from './event.service'
+import { EventService } from './event.service';
+import { NotificationService } from './notification.service';
 
 const baseUrl = 'http://localhost:5000';
 
@@ -12,7 +13,12 @@ const baseUrl = 'http://localhost:5000';
 export default class Data{
   data; 
 
-  constructor (private http: Http, private userService: UserService, private eventService: EventService) {}
+  constructor (
+    private http: Http, 
+    private userService: UserService, 
+    private eventService: EventService,
+    private notificationService: NotificationService
+  ) {}
 
   getHomeData(): Promise<Array<{}>>  {
     return this.http
@@ -65,7 +71,10 @@ export default class Data{
     this.http
       .post(`${baseUrl}/auth/signup`, body)
       .map(res => res.json())
-      .subscribe(res => this.eventService.triggerStatisticChanged(''));    
+      .subscribe(res => {
+        this.eventService.triggerStatisticChanged('');
+        this.notificationService.setNotification(res.message);
+      });    
   }  
 
   loginUser(user){
@@ -84,6 +93,7 @@ export default class Data{
         if (res.success) {
           this.userService.setUser(res.user);
           this.userService.setToken(res.token);
+          this.notificationService.setNotification(res.message);
         }
 
         return res;
@@ -124,7 +134,10 @@ export default class Data{
 
     return this.http
       .post(`${baseUrl}/flowers/create`, body, { headers })
-      .map(res => { this.eventService.triggerStatisticChanged(''); return res.json();})
+      .map(res => { 
+        this.eventService.triggerStatisticChanged('');
+        return res.json();
+      })
   }
 
   addReviewOfFlower(flowerReview, flowerId){
@@ -187,4 +200,18 @@ export default class Data{
       .map(res => res.json())
       .subscribe(res => console.log(res));
     }  
+
+    searchCar(searchFlower): Promise<Array<{}>> {
+
+      let searchRequest = searchFlower.searchParam;      
+
+      return this.http
+        .get(`${baseUrl}/flowers/all?search=${searchRequest}`)
+        .toPromise()
+        .then(resp => resp.json())
+        .catch(err => { 
+          console.log(err);
+          return [];
+        });
+    }
 } 
