@@ -68,13 +68,13 @@ export default class Data{
       password: user.password
     };    
 
-    this.http
+    return this.http
       .post(`${baseUrl}/auth/signup`, body)
-      .map(res => res.json())
-      .subscribe(res => {
+      .map(res => {return res.json()});
+      /*.subscribe(res => {
         this.eventService.triggerStatisticChanged('');
         this.notificationService.setNotification(res.message);
-      });    
+      }); */   
   }  
 
   loginUser(user){

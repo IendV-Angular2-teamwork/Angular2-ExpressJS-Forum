@@ -5,6 +5,7 @@ import { User } from '../../../models/user.model';
 import { UserService } from '../../../data/user.service';
 import { NotificationService } from '../../../data/notification.service';
 import Data from '../../../data/data.service';
+import {EventService} from '../../../data/event.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class RegisterComponent {
     private data: Data,
     private router: Router, 
     private userService: UserService, 
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private eventService: EventService
   ){
     this.user = new User();
     console.log(this.userService.isLoggedIn())
@@ -28,9 +30,15 @@ export class RegisterComponent {
 
   onSubmit(registerUserForm){ 
     registerUserForm = this.user;
-    this.data.registerUser(this.user); 
-    //console.log(this.user);
-    this.notification = this.notificationService.getNotification();
-    this.router.navigateByUrl('/login');
+    this.data.registerUser(this.user)
+    .subscribe(res => {
+      if(res.success) {
+      this.eventService.triggerStatisticChanged('');
+      this.eventService.triggerNotificationFetched(res.message);
+      this.router.navigateByUrl('/login');
+      } else {
+        this.eventService.triggerNotificationFetched(res.message);
+      }
+    });
   }
 }

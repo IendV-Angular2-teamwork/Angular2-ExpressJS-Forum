@@ -32,11 +32,13 @@ export class NavbarComponent implements OnInit {
         this.loggedIn = this.userService.isLoggedIn();
         this.username=name;
       }
-    );    
-  }
+    ); 
 
-  ngOnChanges(){
-     this.notification = this.notificationService.getNotification();
+    this.eventService.notificationFetched.subscribe(
+      (message) => {
+        this.notification = message
+      }
+    );   
   }
 
   logout(){
