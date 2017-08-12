@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../../../models/user.model';
 import { UserService } from '../../../data/user.service';
-import { NotificationService } from '../../../data/notification.service';
+import { EventService } from '../../../data/event.service';
 import Data from '../../../data/data.service';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'login',
@@ -20,8 +19,8 @@ export class LoginComponent {
   constructor(
     private data: Data,
     private router: Router, 
-    private userService: UserService,
-    private notificationService: NotificationService
+    private userService: UserService,    
+    private eventService: EventService
   ){
     this.user = new User();
   }
@@ -29,15 +28,9 @@ export class LoginComponent {
   onSubmit(loginFormUser){
     loginFormUser = this.user;   
     
-    this.data.loginUser(this.user).subscribe((result) => {
-      //this.userService.setToken(result.token); 
-      
-      console.log(result);
-      //console.log(this.userService.getToken());
-      this.router.navigateByUrl('/');
-      this.notification = this.notificationService.getNotification();
-      console.log(this.notification);
+    this.data.loginUser(this.user).subscribe((res) => {      
+      this.router.navigateByUrl('/');     
+      this.eventService.triggerNotificationFetched(res.message, res.success);      
     });
-  }
-  
+  }  
 }

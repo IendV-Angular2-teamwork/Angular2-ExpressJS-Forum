@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
 import { EventService } from './event.service';
-import { NotificationService } from './notification.service';
 
 const baseUrl = 'http://localhost:5000';
 
@@ -16,8 +15,7 @@ export default class Data{
   constructor (
     private http: Http, 
     private userService: UserService, 
-    private eventService: EventService,
-    private notificationService: NotificationService
+    private eventService: EventService   
   ) {}
 
   getHomeData(): Promise<Array<{}>>  {
@@ -92,8 +90,7 @@ export default class Data{
       .map((res) => {
         if (res.success) {
           this.userService.setUser(res.user);
-          this.userService.setToken(res.token);
-          this.notificationService.setNotification(res.message);
+          this.userService.setToken(res.token);          
         }
 
         return res;
@@ -152,10 +149,10 @@ export default class Data{
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `bearer ${token}`);
 
-    this.http
+    return this.http
       .post(`${baseUrl}/flowers/details/${flowerId}/reviews/create`, body, { headers })
-      .map(res => res.json())
-      .subscribe(res => console.log(res));
+      .map(res => {return res.json()})
+      
   }
 
   getReviewsForFlower(flowerId){
@@ -195,23 +192,23 @@ export default class Data{
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `bearer ${token}`);
 
-    this.http
+    return this.http
       .post(`${baseUrl}/flowers/details/${flowerId}/like`, {}, { headers })
-      .map(res => res.json())
-      .subscribe(res => console.log(res));
-    }  
+      .map(res => {return res.json()});
+      
+    }   
 
-    searchCar(searchFlower): Promise<Array<{}>> {
+  searchFlower(searchFlower): Promise<Array<{}>> {
 
-      let searchRequest = searchFlower.searchParam;      
+    let searchRequest = searchFlower.searchParam;      
 
-      return this.http
-        .get(`${baseUrl}/flowers/all?search=${searchRequest}`)
-        .toPromise()
-        .then(resp => resp.json())
-        .catch(err => { 
-          console.log(err);
-          return [];
-        });
+    return this.http
+      .get(`${baseUrl}/flowers/all?search=${searchRequest}`)      
+      .toPromise()
+      .then(resp => resp.json())
+      .catch(err => { 
+        console.log(err);
+        return [];
+      });
     }
 } 

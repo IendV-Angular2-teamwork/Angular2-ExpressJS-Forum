@@ -12,7 +12,7 @@ export class UserService {
   }
 
   setUser(user) {
-    this.user = user;
+    this.user = user; 
   }
 
   getUser() {

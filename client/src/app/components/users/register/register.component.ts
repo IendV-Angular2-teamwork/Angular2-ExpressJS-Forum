@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 import { User } from '../../../models/user.model';
 import { UserService } from '../../../data/user.service';
-import { NotificationService } from '../../../data/notification.service';
 import Data from '../../../data/data.service';
 import {EventService} from '../../../data/event.service';
 
@@ -20,8 +19,7 @@ export class RegisterComponent {
   constructor(
     private data: Data,
     private router: Router, 
-    private userService: UserService, 
-    private notificationService: NotificationService,
+    private userService: UserService,    
     private eventService: EventService
   ){
     this.user = new User();
@@ -34,10 +32,10 @@ export class RegisterComponent {
     .subscribe(res => {
       if(res.success) {
       this.eventService.triggerStatisticChanged('');
-      this.eventService.triggerNotificationFetched(res.message);
+      this.eventService.triggerNotificationFetched(res.message, res.status);
       this.router.navigateByUrl('/login');
       } else {
-        this.eventService.triggerNotificationFetched(res.message);
+        this.eventService.triggerNotificationFetched(res.message, res.status);
       }
     });
   }

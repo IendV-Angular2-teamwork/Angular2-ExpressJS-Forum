@@ -19,14 +19,26 @@ export class FlowersComponent{
 
   onSubmit(flowerFromForm){
     flowerFromForm = this.flower;
-    this.data.addFlower(this.flower)
-    .subscribe(res => {
-      this.eventService.triggerNotificationFetched(res.message);
-      this.router.navigateByUrl(`flowers/details/${res.flower.id}`)
-    });
+
+   
+    let isValidImage;
     
-    //flowers/details/5
-    
-    
+    if(this.flower.image.startsWith('http')){
+      isValidImage = true;
+    }else{
+      isValidImage = false;
+    }
+
+    console.log(this.flower);
+
+    if(this.flower.price > 0 && isValidImage){
+        this.data.addFlower(this.flower)
+          .subscribe(res => {
+            this.eventService.triggerNotificationFetched(res.message, res.success);
+            this.router.navigateByUrl(`flowers/details/${res.flower.id}`)
+        });
+    }else{
+      this.eventService.triggerNotificationFetched('Wrong form!', false);
+    }    
   } 
 }

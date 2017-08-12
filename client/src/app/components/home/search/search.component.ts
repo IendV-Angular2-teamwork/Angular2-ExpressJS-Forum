@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 import { Search } from '../../../models/search.model';
 import Data from '../../../data/data.service';
+import { EventService } from '../../../data/event.service';
 
 @Component({
   selector: 'search',
@@ -13,16 +14,22 @@ export class SearchComponent{
   searchResult: Array<{}>;  
   @Output() sendFlowerInfoToHome = new EventEmitter<Array<{}>>()
 
-  constructor(private dataBase: Data){
+  constructor(private dataBase: Data, private eventService: EventService){
     this.search = new Search();
   }
 
   onSubmit(searchForm){ 
     searchForm = this.search; 
     this.dataBase
-      .searchCar(this.search)
-      .then(data => {this.searchResult = data; this.sendFlowerInfoToHome.emit(this.searchResult);});
-    
-      
+      .searchFlower(this.search)
+      .then(data => {
+        this.searchResult = data;
+        this.sendFlowerInfoToHome.emit(this.searchResult);
+        if(data.length > 0){
+          this.eventService.triggerNotificationFetched('Search Success!', true);
+        }else{
+          this.eventService.triggerNotificationFetched('Nothing found!', false);
+        }
+      })
   }
 }

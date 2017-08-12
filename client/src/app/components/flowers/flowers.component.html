@@ -50,7 +50,7 @@
       id="price"
       name="price" 
       [(ngModel)]='flower.price'
-      #price='ngModel'
+      #price='ngModel'      
       required/>
     <div [hidden]='price.valid || price.pristine'>
       Price is required!
@@ -60,7 +60,7 @@
   <div class="form-group">
     <label for="image">Image:</label>
     <input 
-      type="url" 
+      type="url"
       id="image"
       name="image" 
       [(ngModel)]='flower.image'
@@ -69,9 +69,7 @@
     <div [hidden]='image.valid || image.pristine'>
       Image is required!
     </div>  
-  </div>
-
-  <!-- TODO:live preview to image -->
+  </div> 
 
   <button type="submit" [disabled]="!newFlowerForm.form.valid" class="btn btn-success">Add flower</button>
 </form>

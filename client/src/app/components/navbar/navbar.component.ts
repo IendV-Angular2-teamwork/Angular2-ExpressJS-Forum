@@ -1,10 +1,9 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 import { UserService } from '../../data/user.service';
 import { EventService} from '../../data/event.service';
-import { NotificationService} from '../../data/notification.service';
-
 
 @Component({
   selector: 'nav-bar',
@@ -13,17 +12,18 @@ import { NotificationService} from '../../data/notification.service';
 })
 export class NavbarComponent implements OnInit {
   loggedIn = false; 
-  username = "";
-  notification: string;
+  username = "";  
 
   constructor(
     private userService: UserService,
     private router: Router, 
-    private eventService: EventService,
-    private notificationService: NotificationService   
+    private eventService: EventService,   
+    public toastr: ToastsManager,
+    public vcr: ViewContainerRef 
   ){  
     this.loggedIn = userService.isLoggedIn();
-    console.log(this.loggedIn);    
+    //console.log(this.loggedIn);
+     this.toastr.setRootViewContainerRef(vcr);    
   }
 
   ngOnInit() {
@@ -35,8 +35,16 @@ export class NavbarComponent implements OnInit {
     ); 
 
     this.eventService.notificationFetched.subscribe(
-      (message) => {
-        this.notification = message
+      (notificationInfo) => {
+        let message = notificationInfo.message;
+        let status = notificationInfo.status;
+        if(status === true){
+          this.toastr.success(message, 'Success!');
+        }
+        if(status === false){
+          this.toastr.error(message, 'Error!')
+        }
+        
       }
     );   
   }
@@ -44,6 +52,8 @@ export class NavbarComponent implements OnInit {
   logout(){
     console.log('logout');
     this.userService.logout();
+    this.username = '';
+    this.toastr.success('Logout Success!', 'Success!')
   }
   getUser(){
     this.router.navigateByUrl(`flowers/mine`);

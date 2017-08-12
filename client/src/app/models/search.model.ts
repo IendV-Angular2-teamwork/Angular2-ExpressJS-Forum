@@ -1,5 +1,5 @@
 export class Search{
   constructor(
-    searchParam: string = ''
+    searchParam: string = '' 
   ){}
 }

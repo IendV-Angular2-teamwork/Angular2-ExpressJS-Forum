@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import Data from '../../data/data.service';
+import { EventService } from '../../data/event.service';
 
 @Component({
   selector: 'flower-details',
@@ -17,7 +18,8 @@ export class FlowerDetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataBase: Data,
-    private router: Router
+    private router: Router,
+    private eventService: EventService
   ){}
 
   ngOnInit(){
@@ -44,11 +46,20 @@ export class FlowerDetailsComponent implements OnInit {
   }
 
   like(flowerId){
-    this.dataBase.postLike(flowerId);
+    this.dataBase
+      .postLike(flowerId)
+      .subscribe(res => {
+        this.eventService.triggerNotificationFetched(res.message, res.success);
+        //TODO redirect
+      });
   }
 
   delete(flowerId){
-    this.dataBase.deleteFlower(flowerId)
-    .subscribe(res => {this.router.navigateByUrl('/');});
+    this.dataBase
+    .deleteFlower(flowerId)
+    .subscribe(res => {
+      this.eventService.triggerNotificationFetched(res.message, res.success);
+      this.router.navigateByUrl('/');
+    });
   }
 }

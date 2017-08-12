@@ -15,8 +15,12 @@ export class EventService {
     this.userLoggedIn.emit(data);
   }
 
-  triggerNotificationFetched(message) {
-    this.notificationFetched.emit(message);
+  triggerNotificationFetched(message, status) {
+    let notificationInfo = {
+      message: message,
+      status: status
+    }
+    this.notificationFetched.emit(notificationInfo);
   }
 
   triggerStatisticChanged(data) {

@@ -24,8 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   flowerInfoReceived(flowersInfo){    
-    this.data = flowersInfo;
-    console.log('prihwanato w home component');
-    console.log(flowersInfo);
+    this.data = flowersInfo;    
   }
 }
