@@ -9,12 +9,12 @@ import Data from '../../data/data.service';
   styleUrls: ['./home.component.css'] 
 })
 export class HomeComponent implements OnInit {
-  data: any;    
+  data: any = [];    
 
   constructor(private dataBase: Data, private router: Router){} 
   
   ngOnInit(){
-    this.dataBase.getHomeData().then(data => this.data = data); 
+    this.dataBase.getHomeData().then(data => {this.data = data;}); 
     //console.log(this.data)  
   }  
 

@@ -3,20 +3,23 @@
     <statistics></statistics>      
   </div>  
   <div class="col-md-6 flower-container">
-    <search (sendFlowerInfoToHome)="flowerInfoReceived($event)"></search>
-    <h2>Flowers:</h2>  
-    <ul>
-      <li *ngFor="let flower of data">
-        <h3><span>Flower name:</span> <a (click)="getFlowerId(flower)">{{flower.name}}</a></h3>
-        <h4><span>Createt on:</span> {{flower.createdOn | date: 'dd/MM/yyyy'}}</h4>
-        <p><span>Category:</span> {{flower.category}}</p>
-        <p><span>ID:</span> {{flower.id}}</p>
-        <p><span>Created by:</span> {{flower.createdBy}}</p>
-        <img src="{{flower.image}}" alt="{{flower.name}}" />  
-        <p>likes: {{flower.likes.length}}</p>
-        <p>-----------------------------------------------------------------------------------------------------------------</p>     
-      </li>
-    </ul>
+    <div *ngIf="data.length" >
+      <search (sendFlowerInfoToHome)="flowerInfoReceived($event)"></search>
+      <h2>Flowers:</h2>  
+      <ul>
+        <li *ngFor="let flower of data">
+          <h3><span>Flower name:</span> <a (click)="getFlowerId(flower)">{{flower.name}}</a></h3>
+          <h4><span>Createt on:</span> {{flower.createdOn | date: 'dd/MM/yyyy'}}</h4>
+          <p><span>Category:</span> {{flower.category}}</p>
+          <p><span>ID:</span> {{flower.id}}</p>
+          <p><span>Created by:</span> {{flower.createdBy}}</p>
+          <img src="{{flower.image}}" alt="{{flower.name}}" />  
+          <p>likes: {{flower.likes.length}}</p>
+          <p>-----------------------------------------------------------------------------------------------------------------</p>     
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!data.length">No flowers found</div>
   </div>
   <div class="col-md-3"></div>
 </div>

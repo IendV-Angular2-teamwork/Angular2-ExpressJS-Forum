@@ -32,10 +32,10 @@ export class RegisterComponent {
     .subscribe(res => {
       if(res.success) {
       this.eventService.triggerStatisticChanged('');
-      this.eventService.triggerNotificationFetched(res.message, res.status);
+      this.eventService.triggerNotificationFetched(res.message, res.success);
       this.router.navigateByUrl('/login');
       } else {
-        this.eventService.triggerNotificationFetched(res.message, res.status);
+        this.eventService.triggerNotificationFetched(res.message, res.success);
       }
     });
   }

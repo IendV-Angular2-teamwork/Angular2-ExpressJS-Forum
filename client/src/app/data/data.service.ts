@@ -60,7 +60,7 @@ export default class Data{
     
   
   registerUser(user){ 
-    let body = {      
+    let body = {     
       name: user.name,
       email: user.email,
       password: user.password
@@ -133,7 +133,7 @@ export default class Data{
       .post(`${baseUrl}/flowers/create`, body, { headers })
       .map(res => { 
         this.eventService.triggerStatisticChanged('');
-        return res.json();
+        return res.json(); 
       })
   }
 

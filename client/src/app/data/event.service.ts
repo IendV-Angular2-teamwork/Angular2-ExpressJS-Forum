@@ -20,6 +20,7 @@ export class EventService {
       message: message,
       status: status
     }
+    console.log(notificationInfo)
     this.notificationFetched.emit(notificationInfo);
   }
 
