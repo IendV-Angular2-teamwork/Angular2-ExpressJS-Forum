@@ -15,7 +15,7 @@ export class SearchComponent{
   @Output() sendFlowerInfoToHome = new EventEmitter<Array<{}>>()
 
   constructor(private dataBase: Data, private eventService: EventService){
-    this.search = new Search();
+    this.search = new Search(); 
   }
 
   onSubmit(searchForm){ 

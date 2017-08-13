@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import Data from '../../data/data.service';
+import { UserService } from '../../data/user.service';
 
 @Component({
   selector: 'home',
@@ -10,12 +11,18 @@ import Data from '../../data/data.service';
 })
 export class HomeComponent implements OnInit {
   data: any = [];    
+  token;
 
-  constructor(private dataBase: Data, private router: Router){} 
+  constructor(
+    private dataBase: Data, 
+    private router: Router, 
+    private userService: UserService
+  ){} 
   
   ngOnInit(){
     this.dataBase.getHomeData().then(data => {this.data = data;}); 
-    //console.log(this.data)  
+    //console.log(this.data)
+    this.token =  this.userService.getToken();    
   }  
 
   getFlowerId(flower){
@@ -23,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(`flowers/details/${flowerId}`);
   }
 
-  flowerInfoReceived(flowersInfo){    
+  flowerInfoReceived(flowersInfo){     
     this.data = flowersInfo;    
   }
 }

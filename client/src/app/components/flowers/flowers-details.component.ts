@@ -14,7 +14,7 @@ export class FlowerDetailsComponent implements OnInit {
   flowerId: number;
   data = {name:'', id:'', category:'', image:''};
   reviewsData: any;
-
+  
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataBase: Data,
@@ -37,8 +37,8 @@ export class FlowerDetailsComponent implements OnInit {
       .getReviewsForFlower(this.flowerId)
       .then(data => this.reviewsData = data);  
 
-    console.log(this.data);  
-    console.log(`reviews ${this.reviewsData}`)
+    //console.log(this.data);  
+    //console.log(`reviews ${this.reviewsData}`)    
   }
 
   getFlowerId(flowerId){

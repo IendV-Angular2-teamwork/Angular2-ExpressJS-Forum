@@ -28,7 +28,7 @@ export class FlowerReviewComponent implements OnInit {
   ngOnInit(){
      this.activatedRoute.params.subscribe((params: Params) => {
         this.flowerId = params['id'];
-        console.log(this.flowerId);
+        //console.log(this.flowerId);
       });
   }
 

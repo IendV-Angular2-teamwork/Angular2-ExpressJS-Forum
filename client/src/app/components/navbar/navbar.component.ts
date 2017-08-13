@@ -43,11 +43,10 @@ export class NavbarComponent implements OnInit {
         }
         if(status === false){
           this.toastr.error(message, 'Error!')
-        }
-        
+        }        
       }
     );   
-  }
+  }  
 
   logout(){
     console.log('logout');
@@ -55,6 +54,7 @@ export class NavbarComponent implements OnInit {
     this.username = '';
     this.toastr.success('Logout Success!', 'Success!')
   }
+
   getUser(){
     this.router.navigateByUrl(`flowers/mine`);
   }
