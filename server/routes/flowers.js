@@ -99,7 +99,8 @@ router.get('/details/:id', authCheck, (req, res) => {
     price: flower.price,
     image: flower.image,
     createdOn: flower.createdOn,
-    likes: flower.likes.length
+    likes: flower.likes.length,
+    createdBy: flower.createdBy
   }  
 
   res.status(200).json(response)

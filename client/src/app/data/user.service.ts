@@ -11,9 +11,11 @@ export class UserService {
   purchasedFlowerId;
 
   constructor(private eventService: EventService, private router: Router) {
+    this.purchasedFlower = [];
   }
 
   setUser(user) {
+    console.log(user)
     this.user = user; 
   }
 
@@ -34,18 +36,12 @@ export class UserService {
     return !!this.token;
   }
 
-  setPurchasedFlowers(flower, purchaseFlowerId){
-    //this.purchasedFlower.push(flower);
-    this.purchasedFlower = flower;
-    this.purchasedFlowerId = purchaseFlowerId;
+  setPurchasedFlowers(data, flower){
+    this.purchasedFlower.push({data: data, flower: flower});
   }
 
   getPurchasedFlower(){
-    let dataForPurchasedFlowers = {
-      purchase: this.purchasedFlower,
-      purchasedFlowerId: this.purchasedFlowerId
-    }
-    return dataForPurchasedFlowers;
+    return this.purchasedFlower;
   }
 
   logout(){

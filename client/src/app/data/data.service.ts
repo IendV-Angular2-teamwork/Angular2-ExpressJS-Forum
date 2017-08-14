@@ -89,6 +89,7 @@ export default class Data{
       .map(res => res.json())
       .map((res) => {
         if (res.success) {
+          console.log(res)
           this.userService.setUser(res.user);
           this.userService.setToken(res.token);          
         }

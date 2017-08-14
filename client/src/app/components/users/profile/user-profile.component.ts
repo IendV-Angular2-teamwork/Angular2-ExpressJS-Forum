@@ -10,7 +10,8 @@ import { UserService } from '../../../data/user.service';
 })
 export class UserProfileComponent implements OnInit {
   data: any;
-  purchasedFlowers = {purchase: {} , purchasedFlowerId: ''};
+  purchasedFlowers = [];
+  total = 0;
 
   constructor(
     private dataBase: Data,
@@ -21,9 +22,10 @@ export class UserProfileComponent implements OnInit {
     this.dataBase
       .getProfileInfo()
       .then(data => this.data = data);
+      console.log(this.userService.getPurchasedFlower())
     this.purchasedFlowers = this.userService.getPurchasedFlower();
-    
-    console.log(this.purchasedFlowers.purchase);
-    console.log(this.purchasedFlowers.purchasedFlowerId);
+    for(let purchase of this.purchasedFlowers) {
+      this.total += purchase.flower.price;
+    }
   }
 }

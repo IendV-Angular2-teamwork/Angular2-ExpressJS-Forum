@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   }  
 
   getFlowerId(flower){
-    this.userService.setUser(flower.createdBy);
     let flowerId = flower.id;   
     this.router.navigateByUrl(`flowers/details/${flowerId}`);
   }

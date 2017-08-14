@@ -15,11 +15,11 @@
 </div>
 <br />
 <div>
-  <button class="btn btn-success btn-lg" (click)="buyFlower(data.id)">Buy Flower</button>
+  <button class="btn btn-success btn-lg" (click)="buyFlower(data.id)" *ngIf="!isCreator">Buy Flower</button>
 </div>
 <br />
 <div>
-  <button class="btn btn-danger" (click)="delete(data.id)">Delete this</button>
+  <button class="btn btn-danger" (click)="delete(data.id)" *ngIf="isCreator">Delete this</button>
 </div>
 
 

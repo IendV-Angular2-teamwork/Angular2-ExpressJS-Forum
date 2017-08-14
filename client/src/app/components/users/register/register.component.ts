@@ -33,7 +33,7 @@ export class RegisterComponent {
       if(res.success) {
       this.eventService.triggerStatisticChanged('');
       this.eventService.triggerNotificationFetched(res.message, res.success);
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/login'); 
       } else {
         this.eventService.triggerNotificationFetched(res.message, res.success);
       }

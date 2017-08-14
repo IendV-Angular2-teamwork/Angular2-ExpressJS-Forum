@@ -7,8 +7,16 @@
   </li>
 </ul>
 
-<div *ngIf="purchasedFlowers.purchasedFlowerId">
+<div *ngFor="let purchase of purchasedFlowers">
   <h2>My last purchase:</h2>
-  <p>Flower ID: {{purchasedFlowers.purchasedFlowerId}}</p>
-  <p>payment method: {{purchasedFlowers.purchase.paymentMethod}}</p>
+  <p>Flower Name: {{purchase.flower.name}}</p>
+  <p>Price: {{purchase.flower.price}} &euro;</p>
+  <p>payment method: {{purchase.data.paymentMethod}}</p>
+  <img src="{{purchase.flower.image}}" />
+<br />
+</div>
+<div *ngIf="purchasedFlowers.length">
+  Total items: {{purchasedFlowers.length}}
+  <br />
+  Total: {{total}} &euro;
 </div>

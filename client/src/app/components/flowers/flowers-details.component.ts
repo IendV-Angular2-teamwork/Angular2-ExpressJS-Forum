@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import Data from '../../data/data.service';
 import { EventService } from '../../data/event.service';
+import { UserService} from '../../data/user.service'
 
 @Component({
   selector: 'flower-details',
@@ -14,12 +15,14 @@ export class FlowerDetailsComponent implements OnInit {
   flowerId: number;
   data = {name:'', id:'', category:'', image:''};
   reviewsData = {};
+  isCreator = false;
   
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataBase: Data,
     private router: Router,
-    private eventService: EventService 
+    private eventService: EventService,
+    private userService: UserService 
   ){}
 
   ngOnInit(){
@@ -32,8 +35,9 @@ export class FlowerDetailsComponent implements OnInit {
     this.dataBase
       .findFlowerById(this.flowerId)
       .then(data => {
-        this.data = data;        
-        console.log(this.data)
+        this.data = data; 
+        //console.log(this.userService.getUser())
+        this.isCreator = data.createdBy === this.userService.getUser().email ? true : false;
       });
       
     this.dataBase

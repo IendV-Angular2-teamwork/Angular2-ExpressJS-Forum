@@ -57,7 +57,7 @@ export class PurchaseComponent implements OnInit {
   onSubmit(purchaseForm){
     purchaseForm = this.purchase;    
     this.eventService.triggerNotificationFetched(`Order accepted! We contact with you at ${this.purchase.email}! Have a nice day!`, true);
-    this.userService.setPurchasedFlowers(purchaseForm, this.flowerId);
+    this.userService.setPurchasedFlowers(purchaseForm, this.data);
     this.dataBase.deleteFlower(this.flowerId)
       .subscribe(data => {
         this.router.navigateByUrl('/');
