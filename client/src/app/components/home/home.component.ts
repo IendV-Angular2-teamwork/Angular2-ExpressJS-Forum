@@ -21,11 +21,11 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(){
     this.dataBase.getHomeData().then(data => {this.data = data;}); 
-    //console.log(this.data)
-    this.token =  this.userService.getToken();    
+    this.token = this.userService.getToken();    
   }  
 
   getFlowerId(flower){
+    this.userService.setUser(flower.createdBy);
     let flowerId = flower.id;   
     this.router.navigateByUrl(`flowers/details/${flowerId}`);
   }

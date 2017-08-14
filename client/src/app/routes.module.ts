@@ -39,7 +39,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule 
   ],
   exports: [RouterModule],
   providers: [UserService, LoggedInGuard, EventService]

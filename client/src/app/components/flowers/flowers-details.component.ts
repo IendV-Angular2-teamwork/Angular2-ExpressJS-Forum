@@ -31,14 +31,14 @@ export class FlowerDetailsComponent implements OnInit {
 
     this.dataBase
       .findFlowerById(this.flowerId)
-      .then(data => this.data = data);
+      .then(data => {
+        this.data = data;        
+        console.log(this.data)
+      });
       
     this.dataBase
       .getReviewsForFlower(this.flowerId)
-      .then(data => this.reviewsData = data);  
-
-    //console.log(this.data);  
-    //console.log(`reviews ${this.reviewsData}`)    
+      .then(data => this.reviewsData = data);     
   }
 
   getFlowerId(flowerId){
@@ -50,7 +50,7 @@ export class FlowerDetailsComponent implements OnInit {
       .postLike(flowerId)
       .subscribe(res => {
         this.eventService.triggerNotificationFetched(res.message, res.success);
-        //TODO redirect
+        this.router.navigateByUrl('/');
       });
   }
 

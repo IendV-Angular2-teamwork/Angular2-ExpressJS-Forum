@@ -33,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [Data, UserService,],
+  providers: [Data, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
