@@ -6,3 +6,9 @@
     <p>------------------------------------------------------------</p>
   </li>
 </ul>
+
+<div *ngIf="purchasedFlowers.purchasedFlowerId">
+  <h2>My last purchase:</h2>
+  <p>Flower ID: {{purchasedFlowers.purchasedFlowerId}}</p>
+  <p>payment method: {{purchasedFlowers.purchase.paymentMethod}}</p>
+</div>

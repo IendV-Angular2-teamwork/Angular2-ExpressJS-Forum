@@ -1,0 +1,19 @@
+img{
+  height: 200px;
+}
+
+.purchase-buttons{
+  margin-top: 10px;
+}
+
+.purchase-form{
+  margin-top: 20px;
+  background-color: #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+.purchase-form select{
+  margin-top: 10px;
+}
+

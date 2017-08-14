@@ -60,6 +60,11 @@ export class FlowerDetailsComponent implements OnInit {
     .subscribe(res => {
       this.eventService.triggerNotificationFetched(res.message, res.success);
       this.router.navigateByUrl('/');
-    });
+    });    
+  }
+
+  buyFlower(flowerId){
+    this.router.navigateByUrl(`flower/purchase/${flowerId}`);
+    
   }
 }

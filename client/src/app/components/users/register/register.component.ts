@@ -10,7 +10,7 @@ import {EventService} from '../../../data/event.service';
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['../../../css/common.styles.css', './register.component.css']
 })
 export class RegisterComponent {
   user: User;

@@ -57,5 +57,5 @@ export class NavbarComponent implements OnInit {
 
   getUser(){
     this.router.navigateByUrl(`flowers/mine`);
-  }
+  }  
 }

@@ -15,17 +15,22 @@
 </div>
 <br />
 <div>
+  <button class="btn btn-success btn-lg" (click)="buyFlower(data.id)">Buy Flower</button>
+</div>
+<br />
+<div>
   <button class="btn btn-danger" (click)="delete(data.id)">Delete this</button>
 </div>
+
 
 <div class="review-container" *ngIf="reviewsData.length">
   <h3>Reviews:</h3>  
   <ul>
     <li *ngFor="let review of reviewsData">
+      <p>----------------------------------------------------------</p>
       <p>rating: {{review.rating}}</p>
       <p>comment: {{review.comment}}</p>
-      <p>from: {{review.user}}</p>      
-      <p>----------------------------------------------------------</p>
+      <p>from: {{review.user}}</p>    
     </li>
   </ul>
 </div>

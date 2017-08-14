@@ -12,6 +12,8 @@ import { UserService } from '../../data/user.service';
 export class HomeComponent implements OnInit {
   data: any = [];    
   token;
+  statistics: boolean = false;
+  statisticsLabel: string = 'Show';
 
   constructor(
     private dataBase: Data, 
@@ -32,5 +34,15 @@ export class HomeComponent implements OnInit {
 
   flowerInfoReceived(flowersInfo){     
     this.data = flowersInfo;    
+  }
+
+  showStatistics(){
+    if(!this.statistics){
+      this.statistics = true;
+      this.statisticsLabel = 'Hide';
+    }else{
+      this.statistics = false;
+      this.statisticsLabel = 'Show';
+    }
   }
 }

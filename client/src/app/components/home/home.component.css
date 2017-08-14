@@ -9,6 +9,11 @@ img{
 .flower-container{
   border: 3px solid grey;
   border-radius: 5px;
+  margin-top: 20px;
+}
+
+.search-component{
+  margin-top: 20px;
 }
 
 span{

@@ -8,6 +8,10 @@ span, h1{
 }
 
 .review-container{
-  background-color: #b3b3ff;
+  background-color: #51A351;
   border-radius: 5px;
+}
+
+.review-container p, .review-container h3{
+  color: #fff;
 }

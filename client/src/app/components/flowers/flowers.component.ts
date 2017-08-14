@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'flowers',
   templateUrl: './flowers.component.html',
-  styleUrls: ['./flowers.component.css']
+  styleUrls: ['../../css/common.styles.css', './flowers.component.css']
 })
 export class FlowersComponent{
   flower: any;

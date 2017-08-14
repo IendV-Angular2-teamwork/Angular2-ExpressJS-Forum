@@ -9,7 +9,7 @@ import Data from '../../../data/data.service';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../../../css/common.styles.css', './login.component.css']
 })
 export class LoginComponent {
   user: User;

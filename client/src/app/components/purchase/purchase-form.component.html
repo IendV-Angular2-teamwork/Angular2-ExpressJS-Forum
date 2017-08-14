@@ -1,0 +1,56 @@
+<h1>Flower to purchase:</h1>
+<h3>name: {{data.name}}</h3>
+<h3>price: {{data.price}} &euro;</h3>
+<img src="{{data.image}}" alt="{{data.name}}" />
+<div class="purchase-buttons">
+  <button class="btn btn-danger" (click)="cancelOrder()">Cancel order</button>
+  <button class="btn btn-success" (click)="showForm()">Continue</button>
+</div>
+
+<div *ngIf="visibleForm" class="purchase-form"> 
+  <form #purchaseForm='ngForm' (ngSubmit)='onSubmit()'>
+  <div class="form-group">
+    <label for="adress">Adress:</label>
+    <input 
+      type="text" 
+      id="adress" 
+      name="adress" 
+      [(ngModel)]='purchase.adress' 
+      #adress='ngModel' 
+      required/>
+    <div [hidden]='adress.valid || adress.pristine'>
+      Adress is required!
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input 
+      type="email" 
+      id="email"
+      name="email" 
+      [(ngModel)]='purchase.email'
+      #email='ngModel'
+      required />
+    <div [hidden]='email.valid || email.pristine'> 
+      Password is required!
+    </div>
+
+    <div class="form-group">
+    <label for="paymentMethods">Payment Metod:</label>
+    <select  
+      id="paymentMethods"
+      name="paymentMethods" 
+      [(ngModel)]='purchase.paymentMethod'
+      #email='ngModel'
+      required >
+        <option value="payPal" selected="selected">Pay Pal</option>      
+        <option value="visa">Visa</option>      
+        <option value="masterCard">Master Card</option>      
+    </select>
+    </div>  
+  </div>  
+  <button type="submit" [disabled]="!purchaseForm.form.valid" class="btn btn-success">Make Request</button>
+</form>
+</div>
+

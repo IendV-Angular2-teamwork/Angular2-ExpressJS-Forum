@@ -10,7 +10,7 @@ import { EventService } from '../../data/event.service';
 @Component({
   selector: 'flower-review',
   templateUrl: './flower-review.component.html',
-  styleUrls: ['./flower-review.component.css']
+  styleUrls: ['../../css/common.styles.css', './flower-review.component.css']
 })
 export class FlowerReviewComponent implements OnInit {
   flowerReview: FlowerReview;

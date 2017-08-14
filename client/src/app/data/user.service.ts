@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 export class UserService {
   token;
   user;
+  purchasedFlower: Array<{}>;
+  purchasedFlowerId;
 
   constructor(private eventService: EventService, private router: Router) {
   }
@@ -30,6 +32,20 @@ export class UserService {
 
   isLoggedIn() {
     return !!this.token;
+  }
+
+  setPurchasedFlowers(flower, purchaseFlowerId){
+    //this.purchasedFlower.push(flower);
+    this.purchasedFlower = flower;
+    this.purchasedFlowerId = purchaseFlowerId;
+  }
+
+  getPurchasedFlower(){
+    let dataForPurchasedFlowers = {
+      purchase: this.purchasedFlower,
+      purchasedFlowerId: this.purchasedFlowerId
+    }
+    return dataForPurchasedFlowers;
   }
 
   logout(){

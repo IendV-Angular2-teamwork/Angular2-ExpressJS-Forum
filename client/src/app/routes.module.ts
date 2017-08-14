@@ -10,7 +10,7 @@ import { UserProfileComponent } from './components/users/profile/user-profile.co
 import { FlowersComponent } from './components/flowers/flowers.component';
 import { FlowerDetailsComponent } from './components/flowers/flowers-details.component';
 import { FlowerReviewComponent } from './components/flowers/flower-review.component';
-
+import { PurchaseComponent } from './components/purchase/purchase-form.component';
 
 import { UserService } from './data/user.service';
 import { EventService } from './data/event.service';
@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'new-flower', component: FlowersComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/details/:id', component: FlowerDetailsComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/mine', component: UserProfileComponent, canActivate: [LoggedInGuard] },
-  { path: 'flowers/details/:id/reviews/create', component: FlowerReviewComponent, canActivate: [LoggedInGuard] }
+  { path: 'flowers/details/:id/reviews/create', component: FlowerReviewComponent, canActivate: [LoggedInGuard] },
+  { path: 'flower/purchase/:id', component: PurchaseComponent, canActivate: [LoggedInGuard] }
 ];
 
 @NgModule({
@@ -33,7 +34,8 @@ const routes: Routes = [
     UserProfileComponent,
     FlowersComponent,
     FlowerDetailsComponent,
-    FlowerReviewComponent
+    FlowerReviewComponent,
+    PurchaseComponent
   ],
   imports:[
     RouterModule.forRoot(routes),

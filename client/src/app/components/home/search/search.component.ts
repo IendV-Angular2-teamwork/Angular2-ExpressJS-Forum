@@ -7,7 +7,7 @@ import { EventService } from '../../../data/event.service';
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['../../../css/common.styles.css', './search.component.css']
 })
 export class SearchComponent{
   search: Search;
