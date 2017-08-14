@@ -1,4 +1,4 @@
-<div *ngIf="username">Welcome <a (click)="getUser()">{{username}}</a></div>
+<div id=navid *ngIf="username">Welcome <a (click)="getUser()">{{username}}</a></div>
 <nav>
   <a routerLink='/'>Home</a>
   <a *ngIf="loggedIn" routerLink='/new-flower'>New flower</a>
@@ -6,4 +6,5 @@
   <a *ngIf="!loggedIn" routerLink='/login'>Login</a>
   <a *ngIf="!loggedIn" routerLink='/register'>Register</a>  
 </nav>
+
 
