@@ -13,13 +13,13 @@ import { EventService } from '../../data/event.service';
 export class FlowerDetailsComponent implements OnInit {
   flowerId: number;
   data = {name:'', id:'', category:'', image:''};
-  reviewsData: any;
+  reviewsData = {};
   
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataBase: Data,
     private router: Router,
-    private eventService: EventService
+    private eventService: EventService 
   ){}
 
   ngOnInit(){

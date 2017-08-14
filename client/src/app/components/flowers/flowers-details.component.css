@@ -1,3 +1,13 @@
 img{
   height: 400px;
 }
+
+span, h1{
+  color: #3C3C3C;
+  font-weight: bold;
+}
+
+.review-container{
+  background-color: #b3b3ff;
+  border-radius: 5px;
+}
