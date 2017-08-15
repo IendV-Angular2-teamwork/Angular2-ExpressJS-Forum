@@ -1,4 +1,10 @@
 div{
-  background-color: #ccc;
+  background-color: #ccffcc;
   border-radius: 5px;
+  width: 70%;
+  margin: 0 auto;
+}
+h2, h3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

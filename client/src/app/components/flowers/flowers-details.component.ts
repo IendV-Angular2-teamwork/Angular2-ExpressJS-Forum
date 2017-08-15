@@ -8,7 +8,7 @@ import { UserService} from '../../data/user.service'
 @Component({
   selector: 'flower-details',
   templateUrl: './flowers-details.component.html',
-  styleUrls: ['./flowers-details.component.css']
+  styleUrls: ['../../css/common.styles.css', './flowers-details.component.css']
 
 })
 export class FlowerDetailsComponent implements OnInit {

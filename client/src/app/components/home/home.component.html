@@ -11,7 +11,7 @@
       <h2>Flowers:</h2>  
       <ul>
         <li *ngFor="let flower of data">
-          <p>-----------------------------------------------------------------------------------------------------------------</p>               
+          <p class="green-line">---------------------------------------------------------------------------------</p>               
           <h3><span>Flower name:</span> {{flower.name}} <button *ngIf="token" (click)="getFlowerId(flower)" class="btn btn-sm">View Details</button></h3>
           <h4><span>Created on:</span> {{flower.createdOn | date: 'dd/MM/yyyy'}}</h4>
           <p><span>Category:</span> {{flower.category}}</p>

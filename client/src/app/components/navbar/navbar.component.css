@@ -3,5 +3,11 @@
 }
 a{
   color:#5c5c3d;
+  font-size: 1.5em;
+  padding-right: 3px;
+  padding-left: 3px;
 }
+nav{
+  padding: 10px;
+ }
 

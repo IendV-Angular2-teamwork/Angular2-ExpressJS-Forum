@@ -23,9 +23,10 @@
       name="category" 
       [(ngModel)]='flower.category'
       #category='ngModel'
+      minlength="6"
       required/>
     <div [hidden]='category.valid || category.pristine'>
-      Password is required!
+      Category is required!
     </div>
   </div>
 

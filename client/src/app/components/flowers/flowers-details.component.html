@@ -3,7 +3,6 @@
 <h2><span>Name:</span> {{data.name}}</h2>
 <h2><span>Category:</span> {{data.category}}</h2>
 <h3><span>Price:</span> {{data.price}} &euro;</h3>
-
 <img src="{{data.image}}" />
 <br />
 <div>
@@ -27,7 +26,7 @@
   <h3>Reviews:</h3>  
   <ul>
     <li *ngFor="let review of reviewsData">
-      <p>----------------------------------------------------------</p>
+      <p class="green-line">----------------------------------------------------------</p>
       <p>rating: {{review.rating}}</p>
       <p>comment: {{review.comment}}</p>
       <p>from: {{review.user}}</p>    

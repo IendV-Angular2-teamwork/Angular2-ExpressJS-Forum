@@ -3,20 +3,20 @@
   <li *ngFor="let flower of data">
     <p>name: {{flower.name}}</p>
     <img src="{{flower.image}}" alt="{{flower.name}}" />    
-    <p>------------------------------------------------------------</p>
+    <p class="green-line">------------------------------------------------------------</p>
   </li>
 </ul>
-
+<h2>My purchases:</h2>
 <div *ngFor="let purchase of purchasedFlowers">
-  <h2>My last purchase:</h2>
-  <p>Flower Name: {{purchase.flower.name}}</p>
-  <p>Price: {{purchase.flower.price}} &euro;</p>
-  <p>payment method: {{purchase.data.paymentMethod}}</p>
+  <p class="green-line">---------------------------------</p>
+  <p><span>Flower Name:</span> {{purchase.flower.name}}</p>
+  <p><span>Price:</span> {{purchase.flower.price}} &euro;</p>
+  <p><span>payment method:</span> {{purchase.data.paymentMethod}}</p>
   <img src="{{purchase.flower.image}}" />
 <br />
 </div>
 <div *ngIf="purchasedFlowers.length">
-  Total items: {{purchasedFlowers.length}}
+  <p><span>Total items:</span> {{purchasedFlowers.length}}</p>
   <br />
-  Total: {{total}} &euro;
+  <p class="total-price"><span>Total:</span> {{total}} &euro;</p>
 </div>
