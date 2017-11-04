@@ -9,7 +9,7 @@ import { EventService } from './event.service';
 const baseUrl = 'http://localhost:5000';
 
 @Injectable()
-export default class Data{
+export class Data{
   data; 
 
   constructor (

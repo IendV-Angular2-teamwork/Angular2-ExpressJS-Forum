@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FlowerReview } from '../../models/flower-review.model';
 
-import Data from '../../data/data.service';
+import { Data } from '../../data/data.service';
 import { EventService } from '../../data/event.service';
 
 @Component({

@@ -4,7 +4,7 @@ import { AppRoutesModule } from './routes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }from '@angular/http';
 
-import  Data  from './data/data.service'; 
+import  { Data }  from './data/data.service'; 
 import { UserService }  from './data/user.service'; 
 
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    NavbarComponent, 
     HomeComponent,
     StatisticsComponent,
     SearchComponent   

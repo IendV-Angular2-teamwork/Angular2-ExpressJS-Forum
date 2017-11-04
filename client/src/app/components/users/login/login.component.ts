@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { User } from '../../../models/user.model';
 import { UserService } from '../../../data/user.service';
 import { EventService } from '../../../data/event.service';
-import Data from '../../../data/data.service';
+import { Data } from '../../../data/data.service';
 
 @Component({
   selector: 'login',

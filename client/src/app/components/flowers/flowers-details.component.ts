@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import Data from '../../data/data.service';
+import { Data } from '../../data/data.service';
 import { EventService } from '../../data/event.service';
 import { UserService} from '../../data/user.service'
 

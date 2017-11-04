@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 import { Search } from '../../../models/search.model';
-import Data from '../../../data/data.service';
+import { Data } from '../../../data/data.service';
 import { EventService } from '../../../data/event.service';
 
 @Component({

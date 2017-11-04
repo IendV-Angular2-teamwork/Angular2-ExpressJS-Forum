@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Flower } from '../../models/flower.model';
-import Data from '../../data/data.service';
+import { Data } from '../../data/data.service';
 import {EventService} from '../../data/event.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
