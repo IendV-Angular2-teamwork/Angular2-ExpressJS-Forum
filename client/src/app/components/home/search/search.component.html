@@ -8,7 +8,7 @@
       [(ngModel)]='search.searchParam' 
       #searchParam='ngModel' 
       required />
-      <button type="submit" [disabled]="!searchForm.form.valid" class="btn btn-sm">Search</button>
+      <button type="submit" [disabled]="!searchForm.form.valid" class="btn btn-sm"><i class="fa fa-search" aria-hidden="true"></i></button>
       <!--<div [hidden]="searchParam.valid || searchParam.pristine">
         Search is required!
       </div>-->
