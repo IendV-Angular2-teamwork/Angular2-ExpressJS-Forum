@@ -5,12 +5,13 @@
 <h3><span>Price:</span> {{data.price}} &euro;</h3>
 <img src="{{data.image}}" />
 <br />
+<p>likes: {{data.likes}}</p>
 <div>
   <button class="btn" (click)="getFlowerId(data.id)">Create Review</button>
 </div>
 <br />
 <div>
-  <button class="btn" (click)="like(data.id)">Like this</button>
+  <button class="btn" (click)="like(data.id)"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
 </div>
 <br />
 <div>

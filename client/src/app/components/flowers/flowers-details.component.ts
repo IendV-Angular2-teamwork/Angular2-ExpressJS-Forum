@@ -54,7 +54,7 @@ export class FlowerDetailsComponent implements OnInit {
       .postLike(flowerId)
       .subscribe(res => {
         this.eventService.triggerNotificationFetched(res.message, res.success);
-        this.router.navigateByUrl('/');
+        //this.router.navigateByUrl('/');
       });
   }
 

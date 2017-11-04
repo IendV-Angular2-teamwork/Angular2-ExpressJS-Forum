@@ -11,6 +11,7 @@ import { FlowersComponent } from './components/flowers/flowers.component';
 import { FlowerDetailsComponent } from './components/flowers/flowers-details.component';
 import { FlowerReviewComponent } from './components/flowers/flower-review.component';
 import { PurchaseComponent } from './components/purchase/purchase-form.component';
+import { AboutComponent } from './components/about/about.component';
 
 import { UserService } from './data/user.service';
 import { EventService } from './data/event.service';
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'flowers/details/:id', component: FlowerDetailsComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/mine', component: UserProfileComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/details/:id/reviews/create', component: FlowerReviewComponent, canActivate: [LoggedInGuard] },
-  { path: 'flower/purchase/:id', component: PurchaseComponent, canActivate: [LoggedInGuard] }
+  { path: 'flower/purchase/:id', component: PurchaseComponent, canActivate: [LoggedInGuard] },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({
@@ -35,7 +37,8 @@ const routes: Routes = [
     FlowersComponent,
     FlowerDetailsComponent,
     FlowerReviewComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    AboutComponent
   ],
   imports:[
     RouterModule.forRoot(routes),
