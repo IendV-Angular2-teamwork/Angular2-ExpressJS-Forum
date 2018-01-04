@@ -1,15 +1,18 @@
 package tests.users;
 
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.registerPage.RegisterPage;
 import pages.registerPage.RegisterPageAsserter;
+import tests.BaseTest;
+import utils.excelUtils.ExcelUtil;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-public class TestRegisterPage {
+public class TestRegisterPage extends BaseTest {
     private WebDriver driver;
     private RegisterPage registerPage;
     //private RegisterPageAsserter registerPageAsserter;
@@ -25,6 +28,8 @@ public class TestRegisterPage {
         this.registerPage = new RegisterPage(driver);
         //this.registerPageAsserter = new RegisterPageAsserter(driver);
         this.uniqueEmail = UUID.randomUUID() + "@gmail.com";
+
+        ExcelUtil.setExcelFileSheet("RegisterData"); //TODO : Step 6
     }
 
     @After

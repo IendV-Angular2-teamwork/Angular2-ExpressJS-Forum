@@ -5,11 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.loginPage.LoginPage;
 import pages.registerPage.RegisterPage;
+import tests.BaseTest;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-public class TestLoginPage {
+public class TestLoginPage extends BaseTest {
     private WebDriver driver;
     private RegisterPage registerPage;
     private LoginPage loginPage;
