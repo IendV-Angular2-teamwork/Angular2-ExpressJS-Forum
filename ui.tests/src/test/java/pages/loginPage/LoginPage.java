@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage {
-    WebDriver driver;
+    private WebDriver driver;
 
-    By emailField = By.id("email");
-    By passwordField = By.id("password");
-    By loginBtn = By.xpath("/html/body/app-root/div/div/div/login/form/button");
+    private By emailField = By.id("email");
+    private By passwordField = By.id("password");
+    private By loginBtn = By.xpath("/html/body/app-root/div/div/div/login/form/button");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;

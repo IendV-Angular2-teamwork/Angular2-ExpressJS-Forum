@@ -19,7 +19,7 @@ public class ExcelUtil {
     public static final String currentDir = System.getProperty("user.dir");
 
     //Location of Test data excel file
-    public static String testDataExcelPath = null;
+    public static String testDataExcelPath;
 
     //Excel WorkBook
     private static XSSFWorkbook excelWBook;
@@ -62,7 +62,7 @@ public class ExcelUtil {
         //MAC or Windows Selection for excel path
         if (Platform.getCurrent().toString().equalsIgnoreCase("MAC")) {
             testDataExcelPath = currentDir + "//src//test//java//resources//";
-        } else if (Platform.getCurrent().toString().contains("WIN")) {
+        } else if (Platform.getCurrent().toString().contains("VISTA")) {
             testDataExcelPath = currentDir + "\\src\\test\\java\\resources\\";
         }
         try {

@@ -18,8 +18,8 @@ public class TestLoginPage extends BaseTest {
     private String email;
     private String password;
 
-    @Before
-    public void setUp() throws InterruptedException {
+    @BeforeClass
+    public void setUp(){
         System.setProperty("webdriver.chrome.driver", "C:\\ChromeWebDriver\\chromedriver.exe");
         this.driver = new ChromeDriver();
         this.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -32,9 +32,9 @@ public class TestLoginPage extends BaseTest {
         this.email = this.uniqueEmail;
         this.password = "123456";
 
-        this.registerPage.directRegister("test", this.email, this.password, this.password);
+        //this.registerPage.directRegister("test", this.email, this.password, this.password);
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
         this.driver.get("http://localhost:4200/login");
     }

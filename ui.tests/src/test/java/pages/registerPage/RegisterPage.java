@@ -3,16 +3,15 @@ package pages.registerPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class RegisterPage {
-    WebDriver driver;
+    private WebDriver driver;
 
-    By nameField = By.id("name");
-    By emailField = By.id("email");
-    By passwordField = By.id("password");
-    By confirmPasswordField = By.id("confirmPassword");
-    By registerBtn = By.xpath("/html/body/app-root/div/div/div/register/form/button");
+    private By nameField = By.id("name");
+    private By emailField = By.id("email");
+    private By passwordField = By.id("password");
+    private By confirmPasswordField = By.id("confirmPassword");
+    private By registerBtn = By.xpath("/html/body/app-root/div/div/div/register/form/button");
 
     public RegisterPage(WebDriver driver){
         this.driver = driver;
@@ -34,7 +33,7 @@ public class RegisterPage {
         this.driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
     }
 
-    public void clickRegisterBtn(){
+    private void clickRegisterBtn(){
         this.driver.findElement(registerBtn).click();
     }
 
@@ -42,9 +41,10 @@ public class RegisterPage {
         typeName(name);
         typeEmail(email);
         typePassword(password);
-        typeConfirmPassword(password);
+        typeConfirmPassword(confirmPassword);
         clickRegisterBtn();
     }
+
 
     public String getNotificationMsg(){
         WebElement notificationMsg = driver.findElement(By.className("toast-message"));
