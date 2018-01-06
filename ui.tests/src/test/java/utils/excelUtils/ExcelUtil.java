@@ -16,10 +16,10 @@ import static tests.BaseTest.testDataExcelFileName;
 
 public class ExcelUtil {
     //Main Directory of the project
-    public static final String currentDir = System.getProperty("user.dir");
+    private static final String currentDir = System.getProperty("user.dir");
 
     //Location of Test data excel file
-    public static String testDataExcelPath;
+    private static String testDataExcelPath;
 
     //Excel WorkBook
     private static XSSFWorkbook excelWBook;
@@ -34,10 +34,10 @@ public class ExcelUtil {
     private static XSSFRow row;
 
     //Row Number
-    public static int rowNumber;
+    private static int rowNumber;
 
     //Column Number
-    public static int columnNumber;
+    private static int columnNumber;
 
     //Setter and Getters of row and columns
     public static void setRowNumber(int pRowNumber) {
