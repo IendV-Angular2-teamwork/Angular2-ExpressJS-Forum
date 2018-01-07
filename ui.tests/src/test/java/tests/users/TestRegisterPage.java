@@ -46,9 +46,8 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(1, 4)
         );
 
-        //For status
-        ExcelUtil.setRowNumber(1);
-        ExcelUtil.setColumnNumber(6);
+        ExcelUtil.setActualBehaviorCell(this.registerPage.getNotificationMsg(),1,6);
+        ExcelUtil.setStatusCell(1, 7);
 
         Assert.assertEquals(
                 ExcelUtil.getCellData(1,5),
@@ -65,11 +64,10 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(2, 4)
         );
 
-        //For status
-        ExcelUtil.setRowNumber(2);
-        ExcelUtil.setColumnNumber(6);
+        ExcelUtil.setStatusCell(2,7);
 
         Thread.sleep(2000);
+        ExcelUtil.setActualBehaviorCell(this.driver.getCurrentUrl(), 2, 6);
         Assert.assertEquals(ExcelUtil.getCellData(2,5), this.driver.getCurrentUrl());
     }
 
@@ -82,9 +80,8 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(3, 4)
         );
 
-        //For status
-        ExcelUtil.setRowNumber(3);
-        ExcelUtil.setColumnNumber(6);
+        ExcelUtil.setActualBehaviorCell(this.registerPage.getNotificationMsg(), 3,6);
+        ExcelUtil.setStatusCell(3,7);
 
         Assert.assertEquals(ExcelUtil.getCellData(3,5), this.registerPage.getNotificationMsg());
     }
@@ -98,9 +95,8 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(4, 4)
         );
 
-        //For status
-        ExcelUtil.setRowNumber(4);
-        ExcelUtil.setColumnNumber(6);
+        ExcelUtil.setActualBehaviorCell(this.registerPage.isRegisterBtnClickable().toString(),4,6);
+        ExcelUtil.setStatusCell(4,7);
 
         Assert.assertFalse(this.registerPage.isRegisterBtnClickable());
     }
@@ -114,9 +110,8 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(5,4)
         );
 
-        //For status
-        ExcelUtil.setRowNumber(5);
-        ExcelUtil.setColumnNumber(6);
+        ExcelUtil.setActualBehaviorCell(this.registerPage.isRegisterBtnClickable().toString(),5,6);
+        ExcelUtil.setStatusCell(5,7);
 
         Assert.assertFalse(this.registerPage.isRegisterBtnClickable());
     }

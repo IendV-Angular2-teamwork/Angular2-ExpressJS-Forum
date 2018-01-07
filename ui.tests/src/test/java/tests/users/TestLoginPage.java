@@ -60,9 +60,8 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
-        //For status
-        ExcelUtil.setRowNumber(1);
-        ExcelUtil.setColumnNumber(4);
+        ExcelUtil.setActualBehaviorCell(this.loginPage.getNotificationMsg(),1,4);
+        ExcelUtil.setStatusCell(1,5);
 
         Assert.assertEquals(
                 ExcelUtil.getCellData(1, 3),
@@ -77,9 +76,8 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
-        //For status
-        ExcelUtil.setRowNumber(2);
-        ExcelUtil.setColumnNumber(4);
+        ExcelUtil.setActualBehaviorCell(this.loginPage.getNotificationMsg(),2,4);
+        ExcelUtil.setStatusCell(2,5);
 
         Assert.assertEquals(
                 ExcelUtil.getCellData(2, 3),
@@ -94,9 +92,8 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
-        //For status
-        ExcelUtil.setRowNumber(3);
-        ExcelUtil.setColumnNumber(4);
+        ExcelUtil.setActualBehaviorCell(this.driver.getCurrentUrl(),3,4);
+        ExcelUtil.setStatusCell(3,5);
 
         Assert.assertEquals(
                 ExcelUtil.getCellData(3,3),
@@ -104,13 +101,34 @@ public class TestLoginPage extends BaseTest {
         );
     }
 
-    /*@Test
-    public void loginWithInvalidPassword_mustShownNotificationAndStayAtLoginPage_28_fail(){
-        this.loginPage.loginUser(this.email, "qwerty");
+    @Test
+    public void loginWithInvalidPassword_mustShownNotificationAndStayAtLoginPage_28() throws Exception {
+        this.loginPage.loginUser(
+                this.email,
+                ExcelUtil.getCellData(4,2)
+        );
 
-        Assert.assertEquals("Incorrect email or password", this.loginPage.getNotificationMsg());
-        Assert.assertEquals("http://localhost:4200/login", this.driver.getCurrentUrl());
+        ExcelUtil.setActualBehaviorCell(this.loginPage.getNotificationMsg(),4, 4);
+        ExcelUtil.setStatusCell(4,5);
 
-        //TODO: Optimization here, must have only one assert
-    }*/
+        Assert.assertEquals(
+                ExcelUtil.getCellData(4,3),
+                this.loginPage.getNotificationMsg());
+
+    }
+
+    @Test
+    public void loginWithInvalidPassword_mustShownNotificationAndStayAtLoginPage_28_testRedirect_fail() throws Exception {
+        this.loginPage.loginUser(
+                this.email,
+                ExcelUtil.getCellData(5,2)
+        );
+
+        ExcelUtil.setActualBehaviorCell(this.driver.getCurrentUrl(),5,4);
+        ExcelUtil.setStatusCell(5,5);
+
+        Assert.assertEquals(
+                ExcelUtil.getCellData(5,3),
+                this.driver.getCurrentUrl());
+    }
 }

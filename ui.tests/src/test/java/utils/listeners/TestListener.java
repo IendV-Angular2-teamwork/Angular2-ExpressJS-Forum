@@ -1,5 +1,8 @@
 package utils.listeners;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -7,7 +10,6 @@ import tests.BaseTest;
 import utils.excelUtils.ExcelUtil;
 
 public class TestListener extends BaseTest implements ITestListener {
-
 
     public void onTestStart(ITestResult iTestResult) {
 

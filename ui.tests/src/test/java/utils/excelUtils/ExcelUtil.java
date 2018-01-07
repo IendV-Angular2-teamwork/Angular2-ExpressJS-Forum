@@ -130,4 +130,14 @@ public class ExcelUtil {
             }
         }
     }
+
+    public static void setActualBehaviorCell(String msg, int rowNumber, int columnNumber){
+        setCellData(msg, rowNumber, columnNumber);
+    }
+
+    // Set cell for status
+    public static void setStatusCell(int rowNumber, int columnNumber){
+        ExcelUtil.setRowNumber(rowNumber);
+        ExcelUtil.setColumnNumber(columnNumber);
+    }
 }
