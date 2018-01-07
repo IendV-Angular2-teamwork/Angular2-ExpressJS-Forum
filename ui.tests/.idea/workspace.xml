@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1217db77-261d-491e-82e7-7c43a21d4052" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/utils/drivers/ChooseDriver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/resources/testData.xlsx" afterPath="$PROJECT_DIR$/src/test/java/resources/testData.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java" afterPath="$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java" afterPath="$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java" afterPath="$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui.tests.iml" afterPath="$PROJECT_DIR$/ui.tests.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,27 +25,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestLoginPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestLoginPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1463">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="308">
+              <caret line="30" column="56" lean-forward="false" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1640#1641#0" expanded="true" />
-                <element signature="e#1674#1675#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestRegisterPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+      <file leaf-file-name="ChooseDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/utils/drivers/ChooseDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
+            <state relative-caret-position="330">
+              <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestRegisterPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,20 +78,10 @@
       <file leaf-file-name="RegisterPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="770">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#1092#1093#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,7 +104,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="814">
               <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
               <folding />
             </state>
@@ -117,7 +114,7 @@
       <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/BaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="264">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -129,8 +126,8 @@
       <file leaf-file-name="ExcelUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state relative-caret-position="-550">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,8 +168,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/drivers/SwitchDriver.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/utils/drivers/ChooseDriver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java" />
       </list>
     </option>
   </component>
@@ -207,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -240,40 +240,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShopUiTests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ui.tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="registerPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShopUiTests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ui.tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShopUiTests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ui.tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShopUiTests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ui.tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -283,22 +249,12 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="excelUtils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShopUiTests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ui.tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="listeners" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -328,7 +284,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.TestLoginPage">
+  <component name="RunManager" selected="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1">
     <configuration name="TestLoginPage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -345,70 +301,6 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.users.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ui.tests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="tests.users" />
-      <option name="MAIN_CLASS_NAME" value="tests.users.TestLoginPage" />
-      <option name="METHOD_NAME" value="loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.users.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ui.tests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="tests.users" />
-      <option name="MAIN_CLASS_NAME" value="tests.users.TestLoginPage" />
-      <option name="METHOD_NAME" value="loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -457,6 +349,38 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="TestRegisterPage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ui.tests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="tests.users" />
+      <option name="MAIN_CLASS_NAME" value="tests.users.TestRegisterPage" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -471,6 +395,38 @@
       <option name="PACKAGE_NAME" value="tests.users" />
       <option name="MAIN_CLASS_NAME" value="tests.users.TestRegisterPage" />
       <option name="METHOD_NAME" value="registerWithValidCredentials_mustRegisterSuccessful_1" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ui.tests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="tests.users" />
+      <option name="MAIN_CLASS_NAME" value="tests.users.TestRegisterPage" />
+      <option name="METHOD_NAME" value="registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -573,17 +529,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.TestRegisterPage" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.TestRegisterPage" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
       </list>
     </recent_temporary>
   </component>
@@ -604,35 +560,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLoginPage - 2018.01.06 at 10h 01m 29s.xml">
-      <configuration name="TestLoginPage" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail - 2018.01.06 at 09h 49m 58s.xml">
-      <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail - 2018.01.06 at 09h 51m 13s.xml">
-      <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_fail" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect - 2018.01.06 at 09h 57m 18s.xml">
-      <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect - 2018.01.06 at 09h 58m 18s.xml">
-      <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect - 2018.01.06 at 09h 58m 49s.xml">
-      <configuration name="TestLoginPage.loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestLoginPage_loginWithValidCredentials_loginSuccessful_26 - 2018.01.06 at 09h 44m 29s.xml">
+    <history-entry file="TestLoginPage_loginWithValidCredentials_loginSuccessful_26 - 2018.01.07 at 12h 15m 06s.xml">
       <configuration name="TestLoginPage.loginWithValidCredentials_loginSuccessful_26" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRegisterPage - 2018.01.06 at 09h 21m 47s.xml">
+    <history-entry file="TestRegisterPage - 2018.01.07 at 12h 09m 09s.xml">
       <configuration name="TestRegisterPage" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.06 at 09h 23m 03s.xml">
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 07m 06s.xml">
       <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.06 at 09h 23m 53s.xml">
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 13m 12s.xml">
       <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 21m 34s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 23m 07s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 30m 49s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 33m 50s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1 - 2018.01.07 at 12h 36m 11s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestRegisterPage_registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect - 2018.01.07 at 12h 06m 36s.xml">
+      <configuration name="TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -646,24 +602,24 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.5122249" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.8111247" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17237164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17420538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.48777506" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.49022004" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -672,19 +628,99 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/listeners/TestListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="24" column="96" lean-forward="false" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/loginPage/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -705,16 +741,6 @@
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -765,6 +791,8 @@
           <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -775,8 +803,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -787,6 +813,8 @@
           <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -825,8 +853,6 @@
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -845,8 +871,6 @@
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,8 +889,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,26 +908,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPageAsserter.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/resources.properties" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/utils/listeners/TestListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -918,25 +920,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="814">
           <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/BaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="264">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -944,10 +936,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/excelUtils/ExcelUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
+        <state relative-caret-position="-550">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -956,12 +958,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1463">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state relative-caret-position="308">
+          <caret line="30" column="56" lean-forward="false" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1640#1641#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/drivers/ChooseDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
           </folding>
         </state>
       </provider>

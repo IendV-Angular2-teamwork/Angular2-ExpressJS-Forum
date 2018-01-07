@@ -1,12 +1,12 @@
 package tests.users;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.registerPage.RegisterPage;
 import tests.BaseTest;
+import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
 import utils.listeners.TestListener;
 
@@ -21,16 +21,15 @@ public class TestRegisterPage extends BaseTest {
 
     @BeforeMethod
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:\\ChromeWebDriver\\chromedriver.exe");
-        this.driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        this.driver = ChooseDriver.setChromeDriver();
+        //this.driver = ChooseDriver.setFirefoxDriver();
         this.driver.get("http://localhost:4200/register");
         this.driver.manage().window().maximize();
         this.registerPage = new RegisterPage(driver);
         this.uniqueEmail = UUID.randomUUID() + "@gmail.com";
 
         ExcelUtil.setExcelFileSheet("RegisterData");
-    } //TODO: This on Base Page class
+    }
 
     @AfterMethod
     public void tearDown(){

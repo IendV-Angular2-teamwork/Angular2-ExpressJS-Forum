@@ -7,6 +7,7 @@ import org.testng.annotations.*;
 import pages.loginPage.LoginPage;
 import pages.registerPage.RegisterPage;
 import tests.BaseTest;
+import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
 import utils.listeners.TestListener;
 
@@ -26,9 +27,8 @@ public class TestLoginPage extends BaseTest {
 
     @BeforeMethod
     public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\ChromeWebDriver\\chromedriver.exe");
-        this.driver = new ChromeDriver();
-        this.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        this.driver = ChooseDriver.setChromeDriver();
+        //this.driver = ChooseDriver.setFirefoxDriver();
         this.driver.get("http://localhost:4200/register");
         this.driver.manage().window().maximize();
         this.loginPage = new LoginPage(driver);
