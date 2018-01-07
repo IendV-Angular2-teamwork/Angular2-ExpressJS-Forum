@@ -46,7 +46,7 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(1, 4)
         );
 
-        //For report
+        //For status
         ExcelUtil.setRowNumber(1);
         ExcelUtil.setColumnNumber(6);
 
@@ -65,7 +65,7 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(2, 4)
         );
 
-        //For report
+        //For status
         ExcelUtil.setRowNumber(2);
         ExcelUtil.setColumnNumber(6);
 
@@ -82,7 +82,7 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(3, 4)
         );
 
-        //For report
+        //For status
         ExcelUtil.setRowNumber(3);
         ExcelUtil.setColumnNumber(6);
 
@@ -98,7 +98,7 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(4, 4)
         );
 
-        //For report
+        //For status
         ExcelUtil.setRowNumber(4);
         ExcelUtil.setColumnNumber(6);
 
@@ -114,7 +114,7 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(5,4)
         );
 
-        //For report
+        //For status
         ExcelUtil.setRowNumber(5);
         ExcelUtil.setColumnNumber(6);
 

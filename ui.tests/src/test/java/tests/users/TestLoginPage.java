@@ -60,6 +60,7 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
+        //For status
         ExcelUtil.setRowNumber(1);
         ExcelUtil.setColumnNumber(4);
 
@@ -76,6 +77,7 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
+        //For status
         ExcelUtil.setRowNumber(2);
         ExcelUtil.setColumnNumber(4);
 
@@ -92,6 +94,7 @@ public class TestLoginPage extends BaseTest {
                 this.password
         );
 
+        //For status
         ExcelUtil.setRowNumber(3);
         ExcelUtil.setColumnNumber(4);
 

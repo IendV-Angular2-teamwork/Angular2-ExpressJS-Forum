@@ -8,13 +8,11 @@ public class ChooseDriver {
 
     public static WebDriver setChromeDriver(){
         System.setProperty("webdriver.chrome.driver", "src\\test\\java\\utils\\drivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        return driver;
+        return new ChromeDriver();
     }
 
     public static WebDriver setFirefoxDriver(){
         System.setProperty("webdriver.gecko.driver", "src\\test\\java\\utils\\drivers\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
-        return driver;
+        return new FirefoxDriver();
     }
 }
