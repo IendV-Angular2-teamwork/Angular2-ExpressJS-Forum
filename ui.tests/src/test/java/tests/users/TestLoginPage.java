@@ -2,6 +2,7 @@ package tests.users;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.loginPage.LoginPage;
@@ -12,7 +13,6 @@ import utils.excelUtils.ExcelUtil;
 import utils.listeners.TestListener;
 
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 @Listeners({ TestListener.class })
 
@@ -59,6 +59,8 @@ public class TestLoginPage extends BaseTest {
                 this.email,
                 this.password
         );
+
+        Thread.sleep(2000);
 
         ExcelUtil.setActualBehaviorCell(this.loginPage.getNotificationMsg(),1,4);
         ExcelUtil.setStatusCell(1,5);

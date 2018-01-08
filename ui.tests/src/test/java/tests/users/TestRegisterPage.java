@@ -46,6 +46,8 @@ public class TestRegisterPage extends BaseTest {
                 ExcelUtil.getCellData(1, 4)
         );
 
+        Thread.sleep(2000);
+
         ExcelUtil.setActualBehaviorCell(this.registerPage.getNotificationMsg(),1,6);
         ExcelUtil.setStatusCell(1, 7);
 
