@@ -14,6 +14,7 @@ public class AddNewFlowerPage extends BasePage{
     private By priceField = By.id("price"); // TODO: catch arrow up and down
     private By imageField = By.id("image");
     private By addFlowerBtn = By.xpath("/html/body/app-root/div/div/div/flowers/form/button");
+    private By addNewFlowerBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[2]");
 
     public AddNewFlowerPage(WebDriver driver){
         super(driver);
@@ -29,11 +30,6 @@ public class AddNewFlowerPage extends BasePage{
 
         this.driver.findElement(addFlowerBtn).click();
     }
-
-    //public String getNotificationMsg(){
-    //    WebElement notificationMsg = driver.findElement(By.className("toast-message"));
-    //    return notificationMsg.getText();
-    //}
 
     //TODO: isAddFlowerBtnClickable()
 }
