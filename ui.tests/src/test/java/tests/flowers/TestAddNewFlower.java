@@ -54,9 +54,15 @@ public class TestAddNewFlower extends BaseTest {
     }
 
     @Test
-    public void test() throws InterruptedException { //TODO: Fix
-        //this.driver.get("http://localhost:4200/new-flower");
-        Thread.sleep(2000);
-        this.addNewFlowerPage.addNewFlower("test","test","test","test","test");
+    public void addValidFlower() throws Exception { //TODO: Fix
+        this.addNewFlowerPage.addNewFlower(
+                ExcelUtil.getCellData(1,1),
+                ExcelUtil.getCellData(1,2),
+                ExcelUtil.getCellData(1,3),
+                ExcelUtil.getCellData(1,4),
+                ExcelUtil.getCellData(1,5)
+        );
+
+
     }
 }

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1217db77-261d-491e-82e7-7c43a21d4052" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/tests/flowers/TestAddNewFlower.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pages/addNewFlowerPage/AddNewFlowerPage.java" afterPath="$PROJECT_DIR$/src/test/java/pages/addNewFlowerPage/AddNewFlowerPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/resources/testData.xlsx" afterPath="$PROJECT_DIR$/src/test/java/resources/testData.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../client/src/app/routes.module.ts" afterPath="$PROJECT_DIR$/../client/src/app/routes.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/tests/flowers/TestAddNewFlower.java" afterPath="$PROJECT_DIR$/src/test/java/tests/flowers/TestAddNewFlower.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="TestLoginPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="748">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,7 +37,7 @@
       <file leaf-file-name="AddNewFlowerPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/addNewFlowerPage/AddNewFlowerPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="616">
               <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding />
             </state>
@@ -48,8 +47,8 @@
       <file leaf-file-name="TestAddNewFlower.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/flowers/TestAddNewFlower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+            <state relative-caret-position="385">
+              <caret line="56" column="68" lean-forward="true" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,11 +56,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TestRegisterPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BasePage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/BasePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="352">
+              <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#564#565#0" expanded="true" />
@@ -163,8 +172,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -238,7 +245,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,8 +279,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.TestAddNewFlower.test">
-    <configuration name="TestAddNewFlower.test" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TestAddNewFlower.addValidFlower">
+    <configuration name="TestAddNewFlower.addValidFlower" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="tests.flowers.*" />
@@ -284,7 +293,7 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="tests.flowers" />
       <option name="MAIN_CLASS_NAME" value="tests.flowers.TestAddNewFlower" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="METHOD_NAME" value="addValidFlower" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -303,10 +312,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="TestLoginPage" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAddNewFlower.test" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="tests.users.*" />
+          <option name="PATTERN" value="tests.flowers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -314,11 +323,11 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="tests.users" />
-      <option name="MAIN_CLASS_NAME" value="tests.users.TestLoginPage" />
-      <option name="METHOD_NAME" />
+      <option name="PACKAGE_NAME" value="tests.flowers" />
+      <option name="MAIN_CLASS_NAME" value="tests.flowers.TestAddNewFlower" />
+      <option name="METHOD_NAME" value="test" />
       <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -514,18 +523,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1 (1)" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.test" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1 (1)" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.test" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.addValidFlower" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.test" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1 (1)" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.TestLoginPage" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.addValidFlower" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.TestAddNewFlower.test" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.TestLoginPage.loginWithValidCredentials_loginSuccessful_26" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.TestRegisterPage.registerWithValidCredentials_mustRegisterSuccessful_1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -546,26 +555,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 17m 13s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    <history-entry file="TestAddNewFlower_addValidFlower - 2018.01.08 at 16h 32m 14s.xml">
+      <configuration name="TestAddNewFlower.addValidFlower" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 21m 51s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    <history-entry file="TestAddNewFlower_addValidFlower - 2018.01.08 at 16h 33m 00s.xml">
+      <configuration name="TestAddNewFlower.addValidFlower" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 23m 12s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 25m 50s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 26m 57s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 29m 36s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 32m 28s.xml">
-      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    <history-entry file="TestAddNewFlower_addValidFlower - 2018.01.08 at 16h 35m 15s.xml">
+      <configuration name="TestAddNewFlower.addValidFlower" configurationId="TestNG" />
     </history-entry>
     <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 33m 18s.xml">
       <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
@@ -574,6 +571,18 @@
       <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
     </history-entry>
     <history-entry file="TestAddNewFlower_test - 2018.01.08 at 15h 55m 57s.xml">
+      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 16h 13m 08s.xml">
+      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 16h 16m 00s.xml">
+      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 16h 16m 01s.xml">
+      <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestAddNewFlower_test - 2018.01.08 at 16h 18m 32s.xml">
       <configuration name="TestAddNewFlower.test" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -593,8 +602,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18154034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.49022004" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18337408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -607,6 +615,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.49022004" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -630,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,9 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,11 +679,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -698,11 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -717,9 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,9 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,9 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,9 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,11 +809,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1562">
           <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -848,11 +827,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1034">
           <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -878,9 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,9 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,50 +939,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/BaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="17" column="71" lean-forward="false" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/flowers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/flowers.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/registerPage/RegisterPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestLoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="748">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1030,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/BasePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="352">
+          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#564#565#0" expanded="true" />
@@ -1042,16 +986,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/addNewFlowerPage/AddNewFlowerPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="616">
           <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/users/TestRegisterPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/flowers/TestAddNewFlower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+        <state relative-caret-position="385">
+          <caret line="56" column="68" lean-forward="true" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
