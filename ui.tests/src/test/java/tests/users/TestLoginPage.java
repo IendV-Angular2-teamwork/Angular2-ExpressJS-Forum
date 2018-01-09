@@ -1,8 +1,9 @@
 package tests.users;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.loginPage.LoginPage;
@@ -12,6 +13,8 @@ import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
 import utils.listeners.TestListener;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 @Listeners({ TestListener.class })
@@ -24,6 +27,7 @@ public class TestLoginPage extends BaseTest {
     private String email;
     private String password;
     private String name;
+    private String testName;
 
     @BeforeMethod
     public void setUp() throws InterruptedException {
@@ -49,12 +53,18 @@ public class TestLoginPage extends BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() throws IOException {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String fileName = this.testName + ".png";
+        FileUtils.copyFile(scrFile, new File("c:\\TestScreenshots\\LoginPage\\" + fileName));
+
         this.driver.quit();
     }
 
     @Test
     public void loginWithValidCredentials_loginSuccessful_26() throws Exception {
+        this.testName = ExcelUtil.getCellData(1,0);
+
         this.loginPage.loginUser(
                 this.email,
                 this.password
@@ -73,6 +83,8 @@ public class TestLoginPage extends BaseTest {
 
     @Test
     public void loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27() throws Exception {
+        this.testName = ExcelUtil.getCellData(2,0);
+
         this.loginPage.loginUser(
                 ExcelUtil.getCellData(2, 1),
                 this.password
@@ -89,6 +101,8 @@ public class TestLoginPage extends BaseTest {
 
     @Test
     public void loginWithInvalidEmail_mustShownNotificationAndStayAtLoginPage_27_testRedirect_fail() throws Exception {
+        this.testName = ExcelUtil.getCellData(3,0);
+
         this.loginPage.loginUser(
                 ExcelUtil.getCellData(3,1),
                 this.password
@@ -105,6 +119,8 @@ public class TestLoginPage extends BaseTest {
 
     @Test
     public void loginWithInvalidPassword_mustShownNotificationAndStayAtLoginPage_28() throws Exception {
+        this.testName = ExcelUtil.getCellData(4,0);
+
         this.loginPage.loginUser(
                 this.email,
                 ExcelUtil.getCellData(4,2)
@@ -121,6 +137,8 @@ public class TestLoginPage extends BaseTest {
 
     @Test
     public void loginWithInvalidPassword_mustShownNotificationAndStayAtLoginPage_28_testRedirect_fail() throws Exception {
+        this.testName = ExcelUtil.getCellData(5,0);
+
         this.loginPage.loginUser(
                 this.email,
                 ExcelUtil.getCellData(5,2)

@@ -1,11 +1,9 @@
 package tests.users;
 
-import com.sun.org.glassfish.gmbal.Description;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.registerPage.RegisterPage;
@@ -24,6 +22,7 @@ public class TestRegisterPage extends BaseTest {
     private WebDriver driver;
     private RegisterPage registerPage;
     private String uniqueEmail;
+    private String testName;
 
     @BeforeMethod
     public void setUp(){
@@ -40,15 +39,15 @@ public class TestRegisterPage extends BaseTest {
     @AfterMethod
     public void tearDown() throws IOException {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        // Now you can do whatever you need to do with it, for example copy somewhere
-        //String fileName = + ".png";
-        FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
+        String fileName = this.testName + ".png";
+        FileUtils.copyFile(scrFile, new File("c:\\TestScreenshots\\RegisterPage\\" + fileName));
 
         this.driver.quit();
     }
 
     @Test
     public void registerWithValidCredentials_mustRegisterSuccessful_1() throws Exception {
+        this.testName = ExcelUtil.getCellData(1, 0);
 
         this.registerPage.directRegister(
                 ExcelUtil.getCellData(1, 1),
@@ -70,6 +69,8 @@ public class TestRegisterPage extends BaseTest {
 
     @Test
     public void registerWithValidCredentials_mustRegisterSuccessful_1_testRedirect() throws Exception {
+        this.testName = ExcelUtil.getCellData(2,0);
+
         this.registerPage.directRegister(
                 ExcelUtil.getCellData(2, 1),
                 this.uniqueEmail,
@@ -86,6 +87,8 @@ public class TestRegisterPage extends BaseTest {
 
     @Test
     public void registerWithInvalidEmail_mustShownCorrectErrorMsg_2_fail() throws Exception {
+        this.testName = ExcelUtil.getCellData(3,0);
+
         this.registerPage.directRegister(
                 ExcelUtil.getCellData(3, 1),
                 ExcelUtil.getCellData(3, 2),
@@ -101,6 +104,8 @@ public class TestRegisterPage extends BaseTest {
 
     @Test
     public void registerWithShortPassword_registerBtnMustBeUnavailable_3() throws Exception {
+        this.testName = ExcelUtil.getCellData(4,0);
+
         this.registerPage.directRegister(
                 ExcelUtil.getCellData(4, 1),
                 this.uniqueEmail,
@@ -116,6 +121,8 @@ public class TestRegisterPage extends BaseTest {
 
     @Test
     public void registerWithMismatchConfirmPassword_registerBtnMustBeUnavailable_4() throws Exception {
+        this.testName = ExcelUtil.getCellData(5,0);
+
         this.registerPage.directRegister(
                 ExcelUtil.getCellData(5,1),
                 this.uniqueEmail,

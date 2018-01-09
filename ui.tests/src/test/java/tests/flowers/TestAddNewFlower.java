@@ -1,5 +1,8 @@
 package tests.flowers;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -10,6 +13,8 @@ import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 public class TestAddNewFlower extends BaseTest {
@@ -21,6 +26,7 @@ public class TestAddNewFlower extends BaseTest {
     private String email;
     private String password;
     private String name;
+    private String testName;
 
     @BeforeMethod
     public void setUp() throws InterruptedException {
@@ -48,12 +54,18 @@ public class TestAddNewFlower extends BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() throws IOException {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String fileName = this.testName + ".png";
+        FileUtils.copyFile(scrFile, new File("c:\\TestScreenshots\\AddNewFlower\\" + fileName));
+
         this.driver.quit();
     }
 
     @Test
     public void addValidFlower_addFlowerSuccessful_41() throws Exception {
+        this.testName = ExcelUtil.getCellData(1,0);
+
         this.addNewFlowerPage.clickNewFlowerBtn();
 
         this.addNewFlowerPage.addNewFlower(
@@ -75,6 +87,8 @@ public class TestAddNewFlower extends BaseTest {
 
     @Test
     public void addValidFlower_addFlowerSuccessful_41_testRedirect() throws Exception {
+        this.testName = ExcelUtil.getCellData(2,0);
+
         this.addNewFlowerPage.clickNewFlowerBtn();
 
         this.addNewFlowerPage.addNewFlower(

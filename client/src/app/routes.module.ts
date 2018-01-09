@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent, /*canActivate: [LoggedInGuard]*/ },
-  { path: 'new-flower', component: FlowersComponent,/* canActivate: [LoggedInGuard]*/ },
+  { path: 'new-flower', component: FlowersComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/details/:id', component: FlowerDetailsComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/mine', component: UserProfileComponent, canActivate: [LoggedInGuard] },
   { path: 'flowers/details/:id/reviews/create', component: FlowerReviewComponent, canActivate: [LoggedInGuard] },
