@@ -1,5 +1,9 @@
 package tests.users;
 
+import com.sun.org.glassfish.gmbal.Description;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -10,6 +14,8 @@ import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
 import utils.listeners.TestListener;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 @Listeners({ TestListener.class })
@@ -32,7 +38,12 @@ public class TestRegisterPage extends BaseTest {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() throws IOException {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        // Now you can do whatever you need to do with it, for example copy somewhere
+        //String fileName = + ".png";
+        FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
+
         this.driver.quit();
     }
 

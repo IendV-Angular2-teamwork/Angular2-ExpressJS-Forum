@@ -44,17 +44,18 @@ public class TestAddNewFlower extends BaseTest {
         this.driver.get("http://localhost:4200/login");
         Thread.sleep(2000);
         this.loginPage.loginUser(this.email,this.password);
-        Thread.sleep(2000);
-        this.driver.get("http://localhost:4200/new-flower");
+        Thread.sleep(5000);
     }
 
     @AfterMethod
     public void tearDown(){
-        //this.driver.quit();
+        this.driver.quit();
     }
 
     @Test
-    public void addValidFlower() throws Exception { //TODO: Fix
+    public void addValidFlower_addFlowerSuccessful_41() throws Exception {
+        this.addNewFlowerPage.clickNewFlowerBtn();
+
         this.addNewFlowerPage.addNewFlower(
                 ExcelUtil.getCellData(1,1),
                 ExcelUtil.getCellData(1,2),
@@ -63,6 +64,35 @@ public class TestAddNewFlower extends BaseTest {
                 ExcelUtil.getCellData(1,5)
         );
 
+        ExcelUtil.setActualBehaviorCell(this.addNewFlowerPage.getNotificationMsg(), 1, 7);
+        ExcelUtil.setStatusCell(1, 8);
 
+        Assert.assertEquals(
+                this.addNewFlowerPage.getNotificationMsg(),
+                ExcelUtil.getCellData(1,6)
+        );
+    }
+
+    @Test
+    public void addValidFlower_addFlowerSuccessful_41_testRedirect() throws Exception {
+        this.addNewFlowerPage.clickNewFlowerBtn();
+
+        this.addNewFlowerPage.addNewFlower(
+                ExcelUtil.getCellData(2,1),
+                ExcelUtil.getCellData(2,2),
+                ExcelUtil.getCellData(2,3),
+                ExcelUtil.getCellData(2,4),
+                ExcelUtil.getCellData(2,5)
+        );
+
+        ExcelUtil.setActualBehaviorCell(
+                String.valueOf(this.driver.getCurrentUrl().contains(ExcelUtil.getCellData(2,6))),
+                2,
+                7);
+        ExcelUtil.setStatusCell(2, 8);
+
+        Assert.assertTrue(
+                this.driver.getCurrentUrl().contains(ExcelUtil.getCellData(2,6))
+        );
     }
 }

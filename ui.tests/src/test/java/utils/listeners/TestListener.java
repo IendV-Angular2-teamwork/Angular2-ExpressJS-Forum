@@ -1,5 +1,7 @@
 package utils.listeners;
 
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,12 @@ import org.testng.ITestResult;
 import tests.BaseTest;
 import utils.excelUtils.ExcelUtil;
 
+import java.io.File;
+import java.io.IOException;
+
 public class TestListener extends BaseTest implements ITestListener {
+
+    //private WebDriver driver;
 
     public void onTestStart(ITestResult iTestResult) {
 
