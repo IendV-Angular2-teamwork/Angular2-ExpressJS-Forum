@@ -17,6 +17,7 @@ import utils.listeners.TestListener;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -70,18 +71,18 @@ public class TestHomePage extends BaseTest{
         Thread.sleep(5000);
 
 
-    //for (int i = 0; i < 5; i++) {
-    //    this.addNewFlowerPage.clickNewFlowerBtn();
-    //    Thread.sleep(2000);
-    //    this.addNewFlowerPage.addNewFlower(
-    //            this.flowerName,
-    //            this.flowerCategory,
-    //            this.flowerBlossom,
-    //            this.flowerPrice,
-    //            this.flowerImageUrl
-    //    );
-    //    Thread.sleep(5000);
-     // //  }
+        //for (int i = 0; i < 5; i++) {
+        //    this.addNewFlowerPage.clickNewFlowerBtn();
+        //    Thread.sleep(2000);
+       ////    this.addNewFlowerPage.addNewFlower(
+       //      this.flowerName,
+       //      this.flowerCategory,
+       //      this.flowerBlossom,
+       //      this.flowerPrice,
+       //      this.flowerImageUrl
+       //    );
+       //    Thread.sleep(5000);
+       //}
     }
 
     @AfterMethod
@@ -103,13 +104,34 @@ public class TestHomePage extends BaseTest{
 
 
         List<WebElement> flowerList = this.homePage.getAllFlowers();
+        List<Integer> listId = new ArrayList<Integer>();
 
         for(WebElement f:flowerList){
-            List<WebElement> ids = f.findElements(By.cssSelector("p"));
-
+            List<WebElement> ids = f.findElements(By.className("id"));
             for(WebElement id:ids){
-                System.out.println(id.getText()); //TODO
+                String[] arr = id.getText().split("\\s+");
+                listId.add(Integer.parseInt(arr[1]));
             }
         }
+
+        for(int id:listId){
+            //System.out.println(id);
+        }
+
+        boolean test = false;
+        for (int i = listId.size() - 1; i > 0; i--) {
+            System.out.println(i + " = " + listId.get(i));
+            if(i == listId.get(i)){
+                test = true;
+            }else{
+                test = false;
+            }
+        }
+
+        System.out.println("Result = " + test);
+
+        //TODO: трябва да обърна листа и да изкарам последния елемент
+        // след което, да го откарам това чудо в HomePage
+        // и да направя подобно нещо и за другите полета
     }
 }

@@ -12,13 +12,13 @@
       <ul>
         <li *ngFor="let flower of data">
           <p class="green-line">---------------------------------------------------------------------------------</p>               
-          <h3><span>Flower name:</span> {{flower.name}} <button *ngIf="token" (click)="getFlowerId(flower)" class="btn btn-sm">View Details</button></h3>
-          <h4><span>Created on:</span> {{flower.createdOn | date: 'dd/MM/yyyy'}}</h4>
-          <p><span>Category:</span> {{flower.category}}</p>
-          <p><span>ID:</span> {{flower.id}}</p>
-          <p><span>Created by:</span> {{flower.createdBy}}</p>
-          <img src="{{flower.image}}" alt="{{flower.name}}" />  
-          <p>likes: {{flower.likes.length}}</p>
+          <h3 class="flower-name"><span>Flower name:</span> {{flower.name}} <button *ngIf="token" (click)="getFlowerId(flower)" class="btn btn-sm">View Details</button></h3>
+          <h4 class="date-created"><span>Created on:</span> {{flower.createdOn | date: 'dd/MM/yyyy'}}</h4>
+          <p class="category"><span>Category:</span> {{flower.category}}</p>
+          <p class="id"><span>ID:</span> {{flower.id}}</p>
+          <p class="author"><span>Created by:</span> {{flower.createdBy}}</p>
+          <img class="flower-image" src="{{flower.image}}" alt="{{flower.name}}" />  
+          <p class="likes">likes: {{flower.likes.length}}</p>
         </li>
       </ul>
     </div>
