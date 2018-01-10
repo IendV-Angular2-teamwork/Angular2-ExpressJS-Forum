@@ -8,8 +8,9 @@ public class BasePage {
     private WebDriver driver;
 
     private By addNewFlowerBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[2]");
+    private By homePageBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[1]");
 
-    protected BasePage(WebDriver driver){
+    public BasePage(WebDriver driver){
         this.driver = driver;
     }
 
@@ -20,5 +21,9 @@ public class BasePage {
 
     public void clickNewFlowerBtn(){
         this.driver.findElement(addNewFlowerBtn).click();
+    }
+
+    public void clickHomePageBtn(){
+        this.driver.findElement(homePageBtn).click();
     }
 }
