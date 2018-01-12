@@ -26,4 +26,9 @@ public class BasePage {
     public void clickHomePageBtn(){
         this.driver.findElement(homePageBtn).click();
     }
+
+    public String getFlowerIdCallOnFlowerDetailsPage(){
+        String[] urlArr =  this.driver.getCurrentUrl().split("\\/+");
+        return urlArr[4];
+    }
 }

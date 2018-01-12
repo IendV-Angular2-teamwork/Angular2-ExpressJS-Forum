@@ -1,8 +1,7 @@
-package pages.addNewFlowerPage;
+package pages.flowers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.BasePage;
 
 public class AddNewFlowerPage extends BasePage{
@@ -25,6 +24,7 @@ public class AddNewFlowerPage extends BasePage{
         this.driver.findElement(flowerNameField).sendKeys(flowerName);
         this.driver.findElement(categoryField).sendKeys(category);
         this.driver.findElement(blossomField).sendKeys(blossomType);
+        this.driver.findElement(priceField).clear();
         this.driver.findElement(priceField).sendKeys(price);
         this.driver.findElement(imageField).sendKeys(imageUrl);
 

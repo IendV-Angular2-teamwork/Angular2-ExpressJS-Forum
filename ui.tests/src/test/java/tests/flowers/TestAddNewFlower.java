@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.addNewFlowerPage.AddNewFlowerPage;
+import pages.flowers.AddNewFlowerPage;
 import pages.loginPage.LoginPage;
 import pages.registerPage.RegisterPage;
 import tests.BaseTest;

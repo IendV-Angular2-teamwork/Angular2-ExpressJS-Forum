@@ -1,12 +1,10 @@
 package tests.homePage;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.util.StringUtil;
-import org.codehaus.plexus.util.StringUtils;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.addNewFlowerPage.AddNewFlowerPage;
+import pages.flowers.AddNewFlowerPage;
 import pages.homePage.HomePage;
 import pages.loginPage.LoginPage;
 import pages.registerPage.RegisterPage;
@@ -17,9 +15,7 @@ import utils.listeners.TestListener;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Listeners({ TestListener.class })
 
@@ -39,9 +35,10 @@ public class TestHomePage extends BaseTest{
     private String flowerBlossom;
     private String flowerPrice;
     private String flowerImageUrl;
+    private String flowerId;
 
     @BeforeMethod
-    public void setUp() throws InterruptedException {
+    public void setUp() throws Exception {
         this.driver = ChooseDriver.setChromeDriver();
         //this.driver = ChooseDriver.setFirefoxDriver();
         this.driver.get("http://localhost:4200/register");
@@ -52,16 +49,17 @@ public class TestHomePage extends BaseTest{
         this.homePage = new HomePage(driver);
         this.uniqueEmail = UUID.randomUUID() + "@gmail.com";
 
+        ExcelUtil.setExcelFileSheet("AddNewFlowerForTestHomePage");
+
         this.email = this.uniqueEmail;
         this.password = "123456";
-        this.name = "test";
-        this.flowerName = "test rose";
-        this.flowerCategory = "rosses";
-        this.flowerBlossom = "red";
-        this.flowerPrice = "100";
-        this.flowerImageUrl = "http://www.mmtrbg.com/uploads/com_article/gallery/c5664e01e57f4edb2b69a47edd313d614dd4b3f3.jpg";
+        this.name = ExcelUtil.getCellData(1,1);
 
-        ExcelUtil.setExcelFileSheet("LoginData"); //TODO
+        this.flowerName = ExcelUtil.getCellData(1, 3);
+        this.flowerCategory = ExcelUtil.getCellData(1,4);
+        this.flowerBlossom = ExcelUtil.getCellData(1,5);
+        this.flowerPrice = ExcelUtil.getCellData(1,6);
+        this.flowerImageUrl = ExcelUtil.getCellData(1,7);
 
         this.registerPage.directRegister(this.name, this.email, this.password, this.password);
         Thread.sleep(2000);
@@ -71,18 +69,18 @@ public class TestHomePage extends BaseTest{
         Thread.sleep(5000);
 
 
-        //for (int i = 0; i < 5; i++) {
-        //    this.addNewFlowerPage.clickNewFlowerBtn();
-        //    Thread.sleep(2000);
-       ////    this.addNewFlowerPage.addNewFlower(
-       //      this.flowerName,
-       //      this.flowerCategory,
-       //      this.flowerBlossom,
-       //      this.flowerPrice,
-       //      this.flowerImageUrl
-       //    );
-       //    Thread.sleep(5000);
-       //}
+
+        this.addNewFlowerPage.clickNewFlowerBtn();
+        Thread.sleep(2000);
+        this.addNewFlowerPage.addNewFlower(
+                this.flowerName,
+                this.flowerCategory,
+                this.flowerBlossom,
+                this.flowerPrice,
+                this.flowerImageUrl
+         );
+        this.flowerId = this.homePage.getFlowerIdCallOnFlowerDetailsPage();
+        Thread.sleep(5000);
     }
 
     @AfterMethod
@@ -95,43 +93,22 @@ public class TestHomePage extends BaseTest{
     }
 
     @Test
-    public void checkCorrectAddedFlowers_55() throws InterruptedException {
-        this.testName = "Check correct added flowers";
+    public void checkCorrectAddedFlower_successfulAddedAndDisplayedFlower_55() throws Exception {
+        this.testName = ExcelUtil.getCellData(1,0);
 
         this.homePage.clickHomePageBtn();
 
         Thread.sleep(2000);
 
+        boolean isAllMatch = this.homePage.getLastFlowerName().equals(this.flowerName) &&
+                    this.homePage.getLastFlowerCategory().equals(this.flowerCategory) &&
+                    this.homePage.getLastFlowerId().equals(this.flowerId) &&
+                    this.homePage.getLastFlowerCreatorEmail().equals(this.email) &&
+                    this.homePage.getLastFlowerImageUrl().equals(this.flowerImageUrl);
 
-        List<WebElement> flowerList = this.homePage.getAllFlowers();
-        List<Integer> listId = new ArrayList<Integer>();
+        ExcelUtil.setActualBehaviorCell(String.valueOf(isAllMatch), 1, 9);
+        ExcelUtil.setStatusCell(1, 10);
 
-        for(WebElement f:flowerList){
-            List<WebElement> ids = f.findElements(By.className("id"));
-            for(WebElement id:ids){
-                String[] arr = id.getText().split("\\s+");
-                listId.add(Integer.parseInt(arr[1]));
-            }
-        }
-
-        for(int id:listId){
-            //System.out.println(id);
-        }
-
-        boolean test = false;
-        for (int i = listId.size() - 1; i > 0; i--) {
-            System.out.println(i + " = " + listId.get(i));
-            if(i == listId.get(i)){
-                test = true;
-            }else{
-                test = false;
-            }
-        }
-
-        System.out.println("Result = " + test);
-
-        //TODO: трябва да обърна листа и да изкарам последния елемент
-        // след което, да го откарам това чудо в HomePage
-        // и да направя подобно нещо и за другите полета
+        Assert.assertTrue(isAllMatch);
     }
 }
