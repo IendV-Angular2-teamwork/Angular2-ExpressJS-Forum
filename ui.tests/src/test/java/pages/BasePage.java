@@ -9,6 +9,7 @@ public class BasePage {
 
     private By addNewFlowerBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[2]");
     private By homePageBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[1]");
+    private By logoutBtn = By.xpath("/html/body/app-root/div/nav-bar/nav/a[3]");
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -25,6 +26,10 @@ public class BasePage {
 
     public void clickHomePageBtn(){
         this.driver.findElement(homePageBtn).click();
+    }
+
+    public void clickLogoutBtn(){
+        this.driver.findElement(logoutBtn).click();
     }
 
     public String getFlowerIdCallOnFlowerDetailsPage(){

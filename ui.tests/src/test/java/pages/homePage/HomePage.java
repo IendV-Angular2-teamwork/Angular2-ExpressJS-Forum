@@ -19,6 +19,7 @@ public class HomePage extends BasePage {
     private By lastAddedFlowerId = By.xpath("/html/body/app-root/div/div/div/home/div/div/div/ul/li[1]/p[3]");
     private By lastAddedFlowerCreator = By.xpath("/html/body/app-root/div/div/div/home/div/div/div/ul/li[1]/p[4]");
     private By lastAddedFlowerImage = By.xpath("/html/body/app-root/div/div/div/home/div/div/div/ul/li[1]/img");
+    private By viewDetailsBtnLastAddedFlower = By.xpath("/html/body/app-root/div/div/div/home/div/div/div/ul/li[1]/h3/button");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -52,5 +53,9 @@ public class HomePage extends BasePage {
 
     public String getLastFlowerImageUrl(){
         return this.driver.findElement(lastAddedFlowerImage).getAttribute("src");
+    }
+
+    public void enterDetailsPageLastAddedFlower(){
+        this.driver.findElement(viewDetailsBtnLastAddedFlower).click();
     }
 }

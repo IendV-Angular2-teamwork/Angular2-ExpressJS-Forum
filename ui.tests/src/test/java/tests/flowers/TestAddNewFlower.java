@@ -12,10 +12,13 @@ import pages.registerPage.RegisterPage;
 import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
+import utils.listeners.TestListener;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
+
+@Listeners({ TestListener.class })
 
 public class TestAddNewFlower extends BaseTest {
     private WebDriver driver;
