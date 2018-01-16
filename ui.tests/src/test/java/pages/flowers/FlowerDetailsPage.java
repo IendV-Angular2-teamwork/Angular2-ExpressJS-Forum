@@ -5,6 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
+import pages.loginPage.LoginPage;
+import pages.registerPage.RegisterPage;
+import tests.BaseTest;
+import utils.excelUtils.ExcelUtil;
+
+import java.util.UUID;
 
 public class FlowerDetailsPage extends BasePage {
     private WebDriver driver;

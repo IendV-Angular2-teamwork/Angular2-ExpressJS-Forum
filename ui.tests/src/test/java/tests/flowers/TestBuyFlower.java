@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import pages.BasePage;
 import pages.flowers.AddNewFlowerPage;
 import pages.flowers.FlowerDetailsPage;
 import pages.homePage.HomePage;
@@ -12,6 +13,7 @@ import pages.registerPage.RegisterPage;
 import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
+import utils.initialization.Init;
 import utils.listeners.TestListener;
 
 import java.io.File;
@@ -23,12 +25,12 @@ import java.util.*;
 public class TestBuyFlower extends BaseTest {
     private WebDriver driver;
     private RegisterPage registerPage;
+    private BasePage basePage;
     private LoginPage loginPage;
     private AddNewFlowerPage addNewFlowerPage;
     private HomePage homePage;
     private FlowerDetailsPage flowerDetailsPage;
     private String uniqueEmail;
-    private String email;
     private String password;
     private String name;
     private String testName;
@@ -45,6 +47,7 @@ public class TestBuyFlower extends BaseTest {
         //this.driver = ChooseDriver.setFirefoxDriver();
         this.driver.get("http://localhost:4200/register");
         this.driver.manage().window().maximize();
+        this.basePage = new BasePage(driver);
         this.loginPage = new LoginPage(driver);
         this.registerPage = new RegisterPage(driver);
         this.addNewFlowerPage = new AddNewFlowerPage(driver);
@@ -54,7 +57,6 @@ public class TestBuyFlower extends BaseTest {
 
         ExcelUtil.setExcelFileSheet("BuyFlowerData");
 
-        this.email = this.uniqueEmail;
         this.password = "123456";
         this.name = ExcelUtil.getCellData(1,1);
 
@@ -64,23 +66,17 @@ public class TestBuyFlower extends BaseTest {
         this.flowerPrice = ExcelUtil.getCellData(1,6);
         this.flowerImageUrl = ExcelUtil.getCellData(1,7);
 
-        this.registerPage.directRegister(this.name, this.email, this.password, this.password);
-        Thread.sleep(2000); //TODO: and other classes
-        this.loginPage.loginUser(this.email,this.password);
-        Thread.sleep(5000);
+        Init.registerNewUserAndLogin(this.registerPage, this.loginPage, this.name, this.uniqueEmail, this.password);
 
-
-
-        this.addNewFlowerPage.clickNewFlowerBtn();
-        Thread.sleep(2000);
-        this.addNewFlowerPage.addNewFlower(
+        this.flowerId = Init.addNewFlowerAndReturnFlowerId(
+                this.addNewFlowerPage,
+                this.homePage,
                 this.flowerName,
                 this.flowerCategory,
                 this.flowerBlossom,
                 this.flowerPrice,
                 this.flowerImageUrl
         );
-        Thread.sleep(5000);
     }
 
     @AfterMethod
@@ -89,27 +85,14 @@ public class TestBuyFlower extends BaseTest {
         String fileName = this.testName + ".png";
         FileUtils.copyFile(scrFile, new File("c:\\TestScreenshots\\DetailsPage\\" + fileName));
 
-       // this.driver.quit();
+        this.driver.quit();
     }
 
     @Test
-    public void buyFlower_buyingSuccessful() throws Exception {
+    public void buyFlower_buyingSuccessful_56() throws Exception {
         this.testName = ExcelUtil.getCellData(1,0);
-        ///////////
-        this.flowerDetailsPage.clickLogoutBtn();
-        Thread.sleep(2000);
-        this.driver.get("http://localhost:4200/register");
-        Thread.sleep(2000);
 
-        this.name = ExcelUtil.getCellData(1,2);
-        this.email = UUID.randomUUID() + "@abv.bg";
-        this.password = "123456";
-
-        this.registerPage.directRegister(this.name, this.email, this.password, this.password);
-        Thread.sleep(2000);
-        this.loginPage.loginUser(this.email, this.password);
-        Thread.sleep(2000);
-        /////////////
+        Init.registerAndLoginWithSecondUser(this.driver, this.basePage, this.password, this.registerPage, this.loginPage);
 
         this.homePage.enterDetailsPageLastAddedFlower();
         Thread.sleep(2000);

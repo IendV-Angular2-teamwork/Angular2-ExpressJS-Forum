@@ -12,6 +12,7 @@ import pages.registerPage.RegisterPage;
 import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
+import utils.initialization.Init;
 import utils.listeners.TestListener;
 
 import java.io.File;
@@ -26,7 +27,6 @@ public class TestAddNewFlower extends BaseTest {
     private LoginPage loginPage;
     private AddNewFlowerPage addNewFlowerPage;
     private String uniqueEmail;
-    private String email;
     private String password;
     private String name;
     private String testName;
@@ -42,18 +42,12 @@ public class TestAddNewFlower extends BaseTest {
         this.addNewFlowerPage = new AddNewFlowerPage(driver);
         this.uniqueEmail = UUID.randomUUID() + "@gmail.com";
 
-        this.email = this.uniqueEmail;
         this.password = "123456";
         this.name = "test";
 
         ExcelUtil.setExcelFileSheet("AddNewFlowerData");
 
-        this.registerPage.directRegister(this.name, this.email, this.password, this.password);
-        Thread.sleep(2000);
-        this.driver.get("http://localhost:4200/login");
-        Thread.sleep(2000);
-        this.loginPage.loginUser(this.email,this.password);
-        Thread.sleep(5000);
+        Init.registerNewUserAndLogin(this.registerPage, this.loginPage, this.name, this.uniqueEmail, this.password);
     }
 
     @AfterMethod

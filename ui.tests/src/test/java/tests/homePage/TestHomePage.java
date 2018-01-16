@@ -11,6 +11,7 @@ import pages.registerPage.RegisterPage;
 import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
+import utils.initialization.Init;
 import utils.listeners.TestListener;
 
 import java.io.File;
@@ -26,7 +27,6 @@ public class TestHomePage extends BaseTest{
     private AddNewFlowerPage addNewFlowerPage;
     private HomePage homePage;
     private String uniqueEmail;
-    private String email;
     private String password;
     private String name;
     private String testName;
@@ -51,7 +51,6 @@ public class TestHomePage extends BaseTest{
 
         ExcelUtil.setExcelFileSheet("AddNewFlowerForTestHomePage");
 
-        this.email = this.uniqueEmail;
         this.password = "123456";
         this.name = ExcelUtil.getCellData(1,1);
 
@@ -61,26 +60,17 @@ public class TestHomePage extends BaseTest{
         this.flowerPrice = ExcelUtil.getCellData(1,6);
         this.flowerImageUrl = ExcelUtil.getCellData(1,7);
 
-        this.registerPage.directRegister(this.name, this.email, this.password, this.password);
-        Thread.sleep(2000);
-        this.driver.get("http://localhost:4200/login");
-        Thread.sleep(2000);
-        this.loginPage.loginUser(this.email,this.password);
-        Thread.sleep(5000);
+        Init.registerNewUserAndLogin(this.registerPage, this.loginPage, this.name, this.uniqueEmail, this.password);
 
-
-
-        this.addNewFlowerPage.clickNewFlowerBtn();
-        Thread.sleep(2000);
-        this.addNewFlowerPage.addNewFlower(
+        this.flowerId = Init.addNewFlowerAndReturnFlowerId(
+                this.addNewFlowerPage,
+                this.homePage,
                 this.flowerName,
                 this.flowerCategory,
                 this.flowerBlossom,
                 this.flowerPrice,
                 this.flowerImageUrl
-         );
-        this.flowerId = this.homePage.getFlowerIdCallOnFlowerDetailsPage();
-        Thread.sleep(5000);
+        );
     }
 
     @AfterMethod
@@ -89,7 +79,7 @@ public class TestHomePage extends BaseTest{
         String fileName = this.testName + ".png";
         FileUtils.copyFile(scrFile, new File("c:\\TestScreenshots\\HomePage\\" + fileName));
 
-        this.driver.quit();
+        //this.driver.quit();
     }
 
     @Test
@@ -103,7 +93,7 @@ public class TestHomePage extends BaseTest{
         boolean isAllMatch = this.homePage.getLastFlowerName().equals(this.flowerName) &&
                     this.homePage.getLastFlowerCategory().equals(this.flowerCategory) &&
                     this.homePage.getLastFlowerId().equals(this.flowerId) &&
-                    this.homePage.getLastFlowerCreatorEmail().equals(this.email) &&
+                    this.homePage.getLastFlowerCreatorEmail().equals(this.uniqueEmail) &&
                     this.homePage.getLastFlowerImageUrl().equals(this.flowerImageUrl);
 
         ExcelUtil.setActualBehaviorCell(String.valueOf(isAllMatch), 1, 9);

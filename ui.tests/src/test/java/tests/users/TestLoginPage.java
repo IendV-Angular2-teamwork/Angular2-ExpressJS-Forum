@@ -11,6 +11,7 @@ import pages.registerPage.RegisterPage;
 import tests.BaseTest;
 import utils.drivers.ChooseDriver;
 import utils.excelUtils.ExcelUtil;
+import utils.initialization.Init;
 import utils.listeners.TestListener;
 
 import java.io.File;
@@ -38,18 +39,12 @@ public class TestLoginPage extends BaseTest {
         this.loginPage = new LoginPage(driver);
         this.registerPage = new RegisterPage(driver);
         this.uniqueEmail = UUID.randomUUID() + "@gmail.com";
-
-        this.email = this.uniqueEmail;
         this.password = "123456";
         this.name = "test";
 
         ExcelUtil.setExcelFileSheet("LoginData");
 
-        this.registerPage.directRegister(this.name, this.email, this.password, this.password);
-
-        Thread.sleep(2000);
-
-        this.driver.get("http://localhost:4200/login");
+        Init.registerNewUser(this.registerPage, this.name, this.uniqueEmail, this.password);
     }
 
     @AfterMethod
@@ -66,7 +61,7 @@ public class TestLoginPage extends BaseTest {
         this.testName = ExcelUtil.getCellData(1,0);
 
         this.loginPage.loginUser(
-                this.email,
+                this.uniqueEmail,
                 this.password
         );
 
@@ -122,7 +117,7 @@ public class TestLoginPage extends BaseTest {
         this.testName = ExcelUtil.getCellData(4,0);
 
         this.loginPage.loginUser(
-                this.email,
+                this.uniqueEmail,
                 ExcelUtil.getCellData(4,2)
         );
 
@@ -140,7 +135,7 @@ public class TestLoginPage extends BaseTest {
         this.testName = ExcelUtil.getCellData(5,0);
 
         this.loginPage.loginUser(
-                this.email,
+                this.uniqueEmail,
                 ExcelUtil.getCellData(5,2)
         );
 
